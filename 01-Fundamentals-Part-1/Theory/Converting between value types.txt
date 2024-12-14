@@ -1,0 +1,38 @@
+Converting a string to a number, or a number into a boolean is somrthing that we do all the time.
+In JS there is type Coneversion and type Coercion.
+Type Convertion is when we manually convert from one type to another, type Coercion is when JS automatically 
+coverts types behind the scenes.
+
+Exsample:
+
+LEts say we have an input filed in HTML where the input come as a string '1991'
+const inputYear = '1991';
+
+We need to convert the string ot a number, so we use the build in function:
+Converting a string to a number.
+
+const inputYear = Number('1991');
+
+console.log(Number(inputYear) + 10); // 2001
+
+One important thing here is thet the original value inputYear in not converted and is still a string.
+It still holds the variable '1991' as a string and not as a number.
+
+Using the Number() function will give to us a civerted version.
+
+Trying to convert a string to a number, which is not a number will give us NaN, which means not a number(invalid number)!!!
+
+To covert Numbers to Strings we use the build in function String().
+
+In JS we can conver to a Number, to a String or to a Boolean, but not to undifined or to null!!!
+
+Type Coercion happens whenever an operator is dealing with 2 values of a different types, so then JS will behind the
+scenes covert one value to match the other value.
+
+console.log("I'm" + " " + 23 + " years old."); in JS the + here triggers a coercion.
+
+Whenever there is an operation between a String and a Number the Number wil be converted to a String.
+The (+) Operator will convert Numbers to Strings.
+
+console.log("23" - "10" - 3);
+// The (-) Operator will convert Strings to Numbers.
