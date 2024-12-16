@@ -1,0 +1,19 @@
+We use the let keyword to declare variables that can change later.
+In thechnical terms we call this reasigning a value to a variable. It means we muteted the variable.
+During the execution of the program. Example:
+
+let age = 30;
+age = 50;
+
+We use the const keyword to declare a varable that are not supposed to change at any point in a future.
+So the vaue in a conat variable can not be changed. 
+The const keyword creates a immutable variable, a varable that can not be mutated.
+
+We can not declare empty const variables !!! Example:
+
+const toy;
+
+We recommend to use const by default and let only when you are sure that the varable will change in the future.
+
+
+Let is block scope and var is function scope!!!
