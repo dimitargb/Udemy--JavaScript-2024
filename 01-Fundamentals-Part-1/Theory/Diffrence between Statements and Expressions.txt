@@ -1,0 +1,16 @@
+Expression is a piece of code that produces a value!!
+
+Exsample: 3 + 4 is an expression, because it produces a value.
+Exsample: 1992
+Exsample: true && false && !false
+
+
+Statement is a bigger pice of code that is executed and wich is not producing a value!!
+
+if(20 > 10) {
+    const str = '20 is bigger'
+};
+
+This Statement does not procuse a value.
+
+For exsample in the Template Literal we can only insert experssions, but not statements.
