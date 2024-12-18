@@ -1,0 +1,34 @@
+Lets suppose we want to check if 2 values are actually equal. For that we use the equality Operstors.
+
+const age = 18;
+if(age === 18)console.log("You just became an adult 😃");
+
+Whenever our if block only has one line we don't need the curly brackets{}!!!
+
+age === 18 This is called Comparison Operator!!!
+const age = 18; This is the Assignment Operator!!!
+
+We also have a == equal.
+
+The === equal is called the Strict Equality Operator. Is strict because not perform type coertion and it only
+returns true when both values are exactely the same.
+
+
+The == equal is called the Loose Equality Operator. This equality Operator deos type coercion.
+
+'18' == 18 -> This '18' will be converted to a number. // true, becuse it converts it to a number;
+'18' === 18 -> This will be false, becouse it does not covert it to a number.
+
+We can get a value from a web page by using a prompt() function!!!
+
+//Usingthe prompt() function.
+const favourite = Number(prompt(`What's is your favorite number?`));
+console.log(typeof favourite);
+
+if (favourite === 5) console.log("Cool! This is the right number 😍.");
+else if (favourite === 8) console.log("This number is also cool 🤟.");
+else console.log("This is not the correct number 😠.");
+
+// Diffrent Operator:
+
+if (favourite !== 5) console.log("Why not 23 ?");
