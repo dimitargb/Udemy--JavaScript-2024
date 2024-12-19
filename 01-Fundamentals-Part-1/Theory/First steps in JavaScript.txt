@@ -1,0 +1,22 @@
+Here we start with the prepared html file. 
+We add an script to the head tag in the HTML:
+ <script>
+      let js = "amaizing";
+      if (js === "amaizing") alert("JavaScript is Fun!");
+
+      40 + 8 + 23 - 10;
+      console.log(40 + 8 + 23 - 10);
+    </script>
+
+This script is called inline script!!! The only adavantage of the inline script is that we dont have to load another file.
+Usually we use externsl JS file.
+So we create a new file called script.js
+
+We copy the script code from the HTML file and paste it into the new script.js file.
+Now we can remove the script form the HTML file.
+
+We connect the script.js using script in the HTML file. Here we naeed to specify the name of the file and the location.
+
+ <script src="script.js"></script>
+
+ Here we dont have to specify the entire path to the file because script.js is in the same folder as the index.html file.
