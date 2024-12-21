@@ -1,0 +1,32 @@
+const age = 19;
+const isOldEnough = age >= 18;
+
+We have a boolean isOldEnough which can be wither true or false.
+in the if(here goes the condition) if is true, tha the block{} will be executed!!!
+
+const age = 16;
+const isOldEnough = age >= 18;
+
+if (isOldEnough) {
+  console.log("Dimitar can start driving license coureses 🚗!");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(
+    `Ivan has ${yearsLeft} years, untill he starts his driving license coureses 😄!`
+  );
+}
+
+If esle is called if else cotrol structure!!! Is called cotrol structure becuse it gives us the option to 
+have more control over the way the our code is executed.
+
+Exsample:
+
+const birthYear = 1991;
+let century;
+
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
