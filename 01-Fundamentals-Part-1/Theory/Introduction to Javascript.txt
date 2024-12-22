@@ -1,0 +1,32 @@
+JavaScript is a high-level, object-oriented, multi-paradigm programming language.
+A programming language is a language that will instruct the computer to do something.
+Object oriented menas that JavaScript is mostly based on Objects, for storing most kind of data.
+A multi-paradigm  language means that JavaScript si so flexibale and versitale, that we can use all kinds of
+diffrent programming styles such as imperative and declerative programming styles.
+This diffrent styles are just diffrent ways of structuring our code.
+
+The role of JavaScript in the web development:
+
+The 3 technologies HTML, CSS and JavaScript all work together to create beautiful, interactive and dynamyc websites or
+web applications.
+
+The HTML is responsable for the content of the page - text, images, buttons.
+
+The CSS is responsable for the presentation of that content - styling and layout of the elemenst in the web page.
+
+JavaScript is the real programming language of the internet and it allows developers to add dynamyc and interactive
+effects to any web page. We also use it to manipulate the content of the CSS, load data from remote Servers and building
+applications in the brousers, wich we call web applications.
+
+JavaScript allows us to add dynamyc effect to pages and to build entire web applications in the brouser.
+With React, Angualar and Vue Frameworks and Libraries help JavaScript write large application a lot easyer and faster.
+Those Frameworks and Libraries are 100% based on JavaScript.
+
+JavaScript can also run autside of the web brousers. You can use JavaScript on a web Servers, using a NodeJs technology, which
+does not need any brousers at all and allows us to create Back-end applications. They run on a web Server and iteracts With
+the applications.
+
+On the other hand, when we use JavaScript in the brouser we create the so called Front-End applications. We can use JavaScript,
+to build mobile applications and native desctop applications.
+
+JavaScript releases -> ES/6(ES2015) (ES means ECMA Script). The Modern JavaScript starts form ES/6 or ES2015.
