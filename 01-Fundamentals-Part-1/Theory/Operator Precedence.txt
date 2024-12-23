@@ -1,0 +1,25 @@
+mdn - Mozilla Developer Network
+We type in the google search -> mdn operator precedence.
+Usually all the Math operators are executed before the comparison operators.
+
+Assignment is exsample of right to left execution.
+
+let y, z;
+
+y = z = 25 - 10 - 5;
+console.log(y, z); z = 10, y = 10  because assigment is working from right to left!
+
+Very important - Operations within brackets(скоби) will be executed first!!!
+
+A great example is to calculate the avarage of 2 values.
+
+Calculating the avarage
+const avarageAge = ageJoanas + ageFranky / 2;
+console.log(ageJoanas, ageFranky, avarageAge); // avarageAge = 66;
+
+The reason is becuse the devision is happening before the addition according to the Opertaor precedence Table
+We need to put the addition in brackets so this operation to be executed first and then the devision.
+
+const avarageAge1 = (ageJoanas + ageFranky) / 2;
+console.log(avarageAge1); // avarageAge now is 42;
+
