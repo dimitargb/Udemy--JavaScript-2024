@@ -1,0 +1,17 @@
+Before we write any code we need to install and configute a code editor. A code editor is the main tool for any developer
+and we use it to write our code. We will use Visual Studio Code or vs code. We can istall a Monokai Pro Theme, but this is paid
+Another Theme is Monokai Classic wich is free.
+
+Now about vscode settings:
+
+The first setting is Auto Save that should be set to onFocusChange. this will automaticcaly save the file,
+wihout me having ot do enything.
+
+Another one is Multi Cursor Modifier - we leave it at alt.
+
+World Wrap - on.
+
+Another important one is -> Format On Save, it has to be picked.
+
+To open the editor on a Page press Ctrl + Shift + J.
+
