@@ -1,0 +1,37 @@
+Falsy Values a values that are not exactely false but will become false, when we try to convert them into a boolean.
+
+In JS there are only 5 falsy values:
+
+0, '', undifined, null, NaN;
+
+Only this values will be converted to false, when we attemp to covert them to a boolean!!!
+
+Everything else a called Truthy Values!!!
+
+If we want to convert a vlue to Boolean we use the Boolean() function.
+
+In practice the convertion to a Boolean is always coertion, JS does this automatically for us. this happends when we use
+logical operations and when we use if else statements.
+
+Exsample:
+const money = 0;
+
+if (money) {
+  console.log(`Don't spend it all!`);
+} else {
+  console.log("You should get a job!");
+}
+
+JS wil try to convert everything which is in the brackets(money) into a Boolean. And because money = 0 and we knwo that 0 is 
+falsy value, the satement will be false and that's why the else statement will be executed.
+
+Another use case is to check if a variable is actualy defined or not.
+
+let hight;
+if (hight) {
+  console.log("Hight is DEFINED");
+} else {
+  console.log("Hight is UNDEFINED");
+}
+
+Result is 'Hight is UNDEFINED' because hight is undefined, that's why the else statement is executed.
