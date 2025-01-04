@@ -1,0 +1,18 @@
+Activating Strict Mode. 
+
+Strict Mode is a special Mode in JS, wich makes it easyer for us to write secure JS code.
+What we have to do is only write the string 'use strict' in the beginning of the script.js file.
+
+This statement has to be  the very first statement in the script.
+We use it always in the beginning of each script.
+
+'use strict'
+
+Strict Mode makes it easyer to avoid excidental errors.
+
+Strict Mode vorbiddes us to do certain things and it will create visable errors for us in certain situations in which without
+Stric Mode the code will fail silently without letting us know that we made a mistake.
+
+Another thing that Strict Mode does is to intriduce a short list of variable names that are reserved for.
+
+Here we get an Error message from the consoly, syaing that that variable is a reverved word and we can not use it.
