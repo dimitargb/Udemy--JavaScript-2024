@@ -1,0 +1,36 @@
+Push Method -> this method adds Elements to the end of the array!
+
+const friends = ["Mihael", "Peter", "John"];
+friends.push('Jay);
+console.log(friends); // ["Mihael", "Peter", "John", "Jay"];
+
+So push is a function that we call this function directly on the frinds array.
+This mutates the original array.
+Since push is a function here it can also return something. The push function does return a value and the value that it
+retirns is the length of the new array.
+So if we want to capture that value we can create a new variable for that.
+
+const newLength = friends.push("Pappy");
+console.log(newLength);
+
+Unshift method -> adds Elements to the beginning of the array.
+
+Just like the push method, the unshift method also returns the lemght of the new array:
+friends.unshift("Ema");
+console.log(friends);
+
+To get the lenght of the new array we simply store the result 
+const arrayLength = friends.unshift("Ema");
+console.log(arrayLength);
+
+Pop method -> will remove the last Element of the array.
+friends.pop();
+
+The pop method reurns the removed Element.
+const popMethod = friends.pop();
+console.log(popMethod);
+
+Shift method -> removes the first Element of the array:
+This method will return waht was removed.
+friends.shift();
+console.log(friends);
