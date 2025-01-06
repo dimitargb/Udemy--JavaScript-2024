@@ -1,0 +1,29 @@
+Another method wuch tells us in wich position a certain Element is in the array.
+
+IndexOf method -> tells us the position of the Element in the array.
+Inside we pass the name of the Element we are looking for.
+
+const friends = ["Mihael", "Peter", "John", "Jay"];
+console.log(frinds.indexOf("Jay")); // 3;
+If we try the same with an Element which isw not in the array we aill get result -1;
+
+The value -1 means this Element is not in the array!
+
+
+Includes method -> will return true if the Element is in the Array and false if is not inside:
+
+console.log(friends.includes("Pirelli")); // false
+console.log(friends.includes("Jay")); // true
+
+This method ueses strict equality for this check.
+
+friends.push(23);
+console.log(friends.includes('23')); // false because is strict equality and not type coarsion.
+console.log(friends.includes(23)); // true  becuse both are numbers.
+
+We can use this mthod to write conditionals, that's one of the very useful application of this method.
+if (friends.includes("Peter")) {
+  console.log("You have a friend called.");
+} else {
+  console.log("You dont have a friend with such name.");
+}
