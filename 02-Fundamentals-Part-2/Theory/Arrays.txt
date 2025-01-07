@@ -1,0 +1,62 @@
+Arrays are data structure. Array is a big container in which we can trow variables and then later refrence them.
+Exsample:
+
+Literal syntax of creating arrays:
+
+const friends = ["Mihael", "Peter", "John"];
+console.log(friends);
+
+We can create an Array in another way:
+
+const years = new Array(1991, 1984, 1987);
+
+An array can hold values of any type!!!
+
+lets say we want to log the 1st element from the friends array:
+console.log(friends[0]); // Mihael
+This is because the arrays a re 0 based, first Element number is always starting form 0.
+
+We can also get the ectual number of the Elements that are in the array.
+console.log(friends.length); -> This shows the exact amount of Elemnts that are in the array and they are not 0 based.
+
+We can use length to get automatically the last Element of any array.
+console.log(friends[friends.length - 1]); // the index of the last element of the array . // John
+
+We can also use the square brackets to add Elements to the array.
+
+friends[1] = "Maria";
+console.log(friends); // ["Mihael", "Maria", "John"];
+
+Only primitive values are immutable, but an array is not a primitive value, so we can mutate it, that's why even when is
+const we are bale to change the value.
+It works this way becuse the way JS stores things in memory.
+What we can not do this to replace the entire array.
+We can use any type of values inside of an array, even another array:
+
+const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends]; 
+
+// Exercise:
+function calcAge(birthYear) {
+  return 2037 - birthYear;
+}
+
+const years = [1990, 1967, 2002, 2010, 2018];
+
+// With the calcAge1 function we want to calculate the age of the first, second and last Element:
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+
+console.log(age1, age2, age3); // 47, 70, 19
+
+// Now we can transfer the values form calcAge to new array:
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages); Here we have new array wi with the values -> 47, 70,19
+
+So basically we can place functions calls in an array becuse they will produce a value.
