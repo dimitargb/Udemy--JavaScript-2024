@@ -1,0 +1,24 @@
+Any unexpected or unintendet behavior of a programm is called a bug. To fix a bug we use a process called debugging which is finding, fixing and preventing bugs.
+
+First we need to be aware that somwhere there is a bug. Next we need to find where exactely is the bug happening.
+
+Once we know where the bug is located we can finally fixed it and correct it. What we need to do id to replace the wrong
+solution with the correct solution.
+
+Finally we should prevent thr bug from ever happening again.
+
+In the brackets we put the argument, arguments()
+
+const measureKalvin = function () {
+
+};
+
+Another way of showing Objects in a console is console.tabe():
+
+ const measuerement = {
+    type: "temprature",
+    unit: "celcius",
+    value: prompt("Degrees celcius:"),
+  };
+
+  console.tabe(measuerement)
