@@ -1,0 +1,53 @@
+Function Declarations are normal functions, where we use the function keyword to declare a function.
+It is a bit like writing a variable.
+
+Exsample:
+We want a person's birthyear as an input to this function.
+
+const age1 = calcAge1(1991);
+console.log(age1);
+
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+}
+
+const age1 = calcAge1(1991);
+console.log(age1);
+
+We can call the function Declarations before the initialisation, it means before the actual function
+
+Function Expression:
+
+Those functions are anonimus functions.
+Instead a writing a function with calcAge1 name, we basically write function without a name, we still define the 
+function body, but we store this function into a varibale. This function is wihout a name and is called anonimus function.
+This is an expression and expression produces a value and we store this value into an variable calcAge2.
+
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+The Function value is stored into an variable -> calcAge2;
+
+const age2 = calcAge2(1983);
+console.log(age2);
+
+We call this function in the exact same way.
+
+So the variable const calcAge2 will hold the anonimus function value.
+In JS fucntions are just value, as a number or a string or a boolean value.
+Function is not a type(string or number type), but it is  avlue.
+So if it is a value, we can store it in a varable.
+
+The diffrence is that we can call function Declarations before we define the function.
+
+const age1 = calcAge1(1991);
+console.log(age1);
+
+
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+};
+
+But if we attempt to call the expression before the definition, it will not work.
+This is not possible becouse of the hoisting.
