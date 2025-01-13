@@ -1,0 +1,18 @@
+Lets see how we can call one function fron another function.
+
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+
+  const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of .`;
+
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+
+Here we have 2 functions, the second function is calling the first function in order to calculate the fruit pieces.
