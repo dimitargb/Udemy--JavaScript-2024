@@ -1,0 +1,48 @@
+Functions are one of the most essential concepts on the JS Language.
+
+A function is simply a piece of code, that we can reuse over and over again, it can also recive data and return data back.
+Let's create a function which logs somthing to the console.
+
+function logger() { all the code in this block is called -> Function body}
+
+function logger() {
+  console.log("My name is Dimitar.");
+}
+
+logger();
+logger();
+logger();
+
+To call the function we write the function name followed form brackets -> logger();
+This is called invoking a function, running or calling the function.
+Each time we call the function the code will be executed !!!
+
+Usually when we write functions we also pass data into the function. the function can also return data as well.
+
+Exsample:
+
+New Exsample with functions parameters.Those Parameters are se#pecific only for this function.
+We give to this function 2 Parameters(apples, oranges). Those 2 Parameters will get defined, once the function is called.
+Those 2 represent the input data of this function.
+
+With the return keyword we can return any value from the function.
+return juice; this will be teh result when executing the function.
+
+function fruitProcessor(apples, oranges) {
+  console.log(apples, oranges);
+  const juice = `Juice with ${apples} apples and ${oranges} oranges`;
+
+  return juice;
+}
+
+fruitProcessor(5, 0); -> those Parameters when we call the function(5, 0) are called arguments!!!
+
+If we want to use the value that was retuned in the function, we need to store it in a variable.
+const appleJuice = fruitProcessor(5, 0);
+and than log the captured value to the console.
+console.log(appleJuice);
+
+We can also directly log the value, without capturing it to a new vafriable:
+console.log(fruitProcessor(5, 0));
+
+Now we van reuse the function with diffrent input values and get a diffrent autput.
