@@ -1,0 +1,27 @@
+Objects are Data Structure in JavaScript. Here we difine key - value pairs.
+So we can give each value a name.
+
+const jonasArray  = ["Jonas", "Schmedtmann", 2037 - 1991, "teacher", ["Michael", "Peter", "John"]]; 
+
+the key is the varaible name -> firstName and the value is the actual name: 'Jonas'.
+the value can be of any type we want here !!!
+
+Each of this keys(variable name) are also called properties!!!
+The objects jonas has 5 properties: firstName, lastName, age, job, friends array.
+
+This is called Object literal syntax - because we are literally writing down the entire object content.
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: "teacher",
+    friends: ["Michael", "Peter", "John"],
+}
+
+So we use Objects to group together different variables.
+The big diffrence between objects and arrays is that in objects the order of this values does not metter at all
+when we want to retrive them.
+
+This menas that we should use arrays for more ordered data and objects for more unstructured data.
+Data that we want to name and then retrive form the object based on that name.
