@@ -1,0 +1,28 @@
+Loops are cotrol structures. 
+Loops allow us to automate repitative tasks. Tasks that we have to perform over and over again.
+The loop will run a code over and over again, untill we tell him to stop.
+
+The loop Statement has 3 Parts.
+1. Part is the value of a counter. 
+   The counter will start form 1 and will go stop where we tell him to stop.
+   Lets cal the counter rep from repetitions, we start from 1
+
+2. Part is a logical condition that is evaluated before each iteration of the loop. Before each time the code in the loop is 
+   executed.
+   Our condition is rep to stay below or equal to 10. If the condition is true the next iteration will run, but as soon 
+   the condition is false the loop will stop.
+   The loop will keep wrunning until this condition rep <= 10 is true.
+
+3. Part we update the counter aftereach iteration.
+   Waht we do here is encrease the counter by 1 after each iteration. (rep++)
+
+ 
+  
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️`);
+}
+
+// Lifting weights repetition 1 🏋️
+
+What the loop does is to verify before each repetition if the condition in Part 2 is still true and only if it is still true
+it will keep running the Loop.
