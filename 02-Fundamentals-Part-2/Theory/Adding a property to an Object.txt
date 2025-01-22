@@ -1,0 +1,30 @@
+If we want to add a new propery to an object we create one and set it to some value.
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "John"],
+};
+
+jonas.location = "USA";
+
+console.log(jonas["location"]); // USA
+
+Challange ->wriet ot the console wihtout using hrdcodet names or numbers
+        'Jonas has 3 friends and his best friend is called Michael':
+
+Solution:
+
+const interestedIn = prompt(
+  `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is called ${jonas.friends[0]}.`
+);
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! What do you want to know about Jonas? Choose between firstName, lastName, age ,job and friends?"
+  );
+}
