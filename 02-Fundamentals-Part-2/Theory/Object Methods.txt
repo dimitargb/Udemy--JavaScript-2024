@@ -1,0 +1,35 @@
+Objects can hold diffrent types of data, they can hold arrays and even objects inside objects.
+Functions are just really another tyoe of value. 
+And if a Functions is just a value, then that means that we can create a
+key - value pair in wich the value is the function.
+
+This means that we can add Functions to Objects.
+ We gonna add to our Object the calcAge() function.
+
+ We add the function name as a property and we specify the function as an expression(function expression).
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "John"], // to get the lenght write ${jonas.friends.length !!!
+  hasDriversLicence: true,
+  calcAge: function (birthYear) {
+    return 2037 - birthYear;
+  },
+};
+
+calling the calcAge property:
+console.log(jonas.calcAge(1992)); // 45
+
+So any function that is attached to an Obejst is called a method.
+
+To inderstand value in an Object 
+firstName: we have a string value
+birthYear: we have a number value
+friends: we have an array value
+hasDriversLicence: we have a boolean value
+calcAge: we have a function value(here we use a function expression)
+
+Function expression is a function wich value is stored in a variable.
