@@ -1,0 +1,49 @@
+Using this keyword in Objects.
+The birthYear is hardcoded in the object, so in calcAge(birthYear) must always be 1991 as in the Obeject.
+We can access the birthYear propery directly from the jonas Object, insted if having to pass it in.
+
+In every method JavaScript gives us access to a special varable called this.
+So in the calcAge() we can read the birthYear directly from the object itself, without having to pass it in as 
+a Parameter.
+The this keyword is equal to the object on which the method id called. The Object who is calling the method is jonas.
+This menas the this keyword will point to jonas.
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "John"],
+  hasDriversLicence: true,
+
+   calcAge: function () {
+    console.log(this); // this is the whole jonas Object
+    return 2037 - this.birthYear; // using this keyword
+  },
+};
+
+console.log(jonas.calcAge()) // 46  we dont need to pass 1991 becuse this keyword is pointing to birthYear.
+
+Let's say we need to access the age muliple time through our programm. This means we need to call the function many times:
+
+console.log(jonas.calcAge())
+console.log(jonas.calcAge())
+console.log(jonas.calcAge())
+
+Instead what we can do is calculate the age once, than store it in the Object jonas and than when we need it in 
+a later point we can then just retrieve the age as property from the Object.
+We can use the this keyword also to store a new property !!! We can sat this.age = 2037 - this.birthYear.
+So we create a new proerty called age:
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear; // using this keyword
+    return;
+  },
+};
+
+To add a new property from a function we use the this keyword -> this.age = 2037 - this.birthYear;  and we add the property age;
+Here we are creating jonas.age proeprty.
+
+We have to know that arrays ara also Ojects, just special kind of objects. They have functions or in other words methods
+that we can use to manipulate them like push, pop, shif, unshift, and many more. This means that array are also ojects, 
+that's thay have methods as well.
