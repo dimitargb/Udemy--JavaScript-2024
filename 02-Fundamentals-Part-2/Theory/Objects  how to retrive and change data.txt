@@ -1,0 +1,36 @@
+We get the property out of the object using the property name itself.
+
+1. Way of getting the property from an object is by using the dot(.) notation.
+   The dot(.) is an operator wich will go to this object and then retrive the  property that we specify.
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "John"],
+};
+
+console.log(jonas.age); // 46
+
+2. We can do the same thing wiht the brackets notation[].
+   Here we need to specify a string wiht the property name.
+
+   console.log(jonas["lastName"]); // Schmedtmann
+
+   Here in the brackest[] we can put any expession we like.
+   In the square brackets[] we can put any expression here:
+
+    const nameKey = "Name";
+    const teaching = 20;
+    console.log(jonas["first" + nameKey]);
+    console.log(jonas["last" + nameKey]);
+
+    We get undifined when we try to acsess a property in an object that does not exsist -> undifined !!!
+
+    Let's say we dont know yet whichproperty we want to show adn we get this information form some user interface.
+    For that we can use the propmt() function.
+    This function wil return a string wich we have to store in a avriable.
+
+    const interestedIn = prompt("What do you want to know about /jonas? Choose between firstName, lastName, age ,job and friends");
+    console.log(jonas[interestedIn]);  
+    JavaScript will come to interestedIn and replace the variable value with the one we choose from prompt function!!!
