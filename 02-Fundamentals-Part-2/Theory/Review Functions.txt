@@ -1,0 +1,23 @@
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+
+  //return retirement;
+  return `${firstName} retires in ${retirement} years from now.`;
+};
+
+The first thing we are going to do is to covert it to function expression. To do this we write function infront the Parameters
+and remove the arrow.
+
+const yearsUntilRetirement1 = function (birthYear, firstName) {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+
+  //return retirement;
+  return `${firstName} retires in ${retirement} years from now.`;
+};
+
+// The return keyword will immidately exit the function once it retuns the value that we told him to return.
+
+All of the 3 types of function fucntions Declarations, function Expressions and Arrow functions can recieve input data,
+they can transform data and they can output data.
