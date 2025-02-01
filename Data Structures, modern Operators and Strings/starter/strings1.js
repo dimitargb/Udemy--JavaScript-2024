@@ -1,0 +1,66 @@
+'use strict';
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+/* STRINGS are 0 based !!! */
+
+// We can get a charcter of a string of a certain position
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log(plane[2]); // 2
+
+console.log('B737'[0]); // B we cab get it directly from the string
+//We can read the lenght property form a string
+console.log(airline.length); // 16
+console.log('TAP Air Portugal'.length); // 16 Here we get it directly from the string
+
+// Methods:
+
+// 1. Index Of Method - We can get the position of a certain letter in the String
+
+console.log(airline.indexOf('r')); // 6 -> this gives us only the first occurance, if we need last one we use lastIndexOf
+console.log(airline.lastIndexOf('r')); // 10
+
+/* We can search the entire word, for exdample occurance of Portugal */
+console.log(airline.indexOf('Portugal')); // 8 -> starts form Position 8 and is case Sensitive it has to be with capital letter!
+/* If we gate -1 it meanas is not existing in the String */
+
+// 2. Slice Method:
+/* We can use the slice method to extract part of a string, and the slice method needs indexes as arguments.
+   There for sometimes is very useful first to figure out the index of a part of a string and extract it.*/
+
+console.log(airline.slice(4)); // Air Portugal
+
+/* 4 is the position at wich the extraction will start index 4, the result is called Substring -> Air Portugal.
+  It is impossible to mutate strings, becuse they are primitive.
+  So this mehod and the other once we will write about, always return a new String.
+  Besides the begin paramether, we can also cpecify and end parameter */
+
+console.log(airline.slice(4, 7)); // Air -> the End value is not includet, it stoppes extracting before reaching 7.
+// The lenght is awlays going to be 7 - 4 = 3 -> Air
+
+/* Now let's try to extract the first word of the string, without knowing any of the indexes, that's where
+  indexOf and lastIndexOf become really important !!! */
+
+console.log(airline.slice(0, airline.indexOf(' '))); // TAP -> here we search for the space form 0 to ' ';
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal -> it starts form the last space ' ';
+
+// We can also use the negative count ant it will start extracting from the End.
+console.log(airline.slice(-3)); // gal -> last 3 letters from Portugal.
+console.log(airline.slice(1, -1)); // AP Air Portuga > the first and the last letters are missing.
+
+// Example:
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat 😧');
+  } else {
+    console.log('You got lucky 👍');
+  }
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
