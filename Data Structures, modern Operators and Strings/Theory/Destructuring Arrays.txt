@@ -1,0 +1,29 @@
+Destructuring is a way of unpacking values from an array or an Object into separate variables.
+
+For Arrays we use Destructuring to retrieve Elements form the Array and store them into varibales.
+
+// Retrieving Elements in a normal way.
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+console.log(c);
+
+// Destructuring - with Destructuring we can declare all the 3 Elements in the same time.
+const [x, y, z] = arr; 
+console.log(x, y, z); // 2, 3, 4;
+
+//Restaurant Data
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+};
+
+const [first, second] = restaurant.categories;
+console.log(first); // Italian
+//If we want to get the first and the third Element we simply leave a hole in the distructuring Operator.
+const [main, ,secondary] = restaurant.starterMenu;
+console.log(thirdEl);
