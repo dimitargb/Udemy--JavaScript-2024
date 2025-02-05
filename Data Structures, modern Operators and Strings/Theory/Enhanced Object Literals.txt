@@ -1,0 +1,29 @@
+// Let's take a look at the restaurant Object, it is an Object literal becuse it has been written using the Object Literal Syntax.
+/*ES6 introduced 3 ways, wich makes it easier to write Object Literals like this and we go true them now:
+1. Let's have and Object wich is outside this Object -> for example the openeningHours Object
+   Now const openingHours is a separate variable outside the restaurant variable.
+   In order now to put the openingHours inside the restaurant Object we can write openingHours: openingHours, but we do not
+   need to repeat openingHours twice so we just write openingHours, becuse the property Name is exately the same as the variable name from wihc we are getting this new Object */
+
+   So instead ot openingHours: openingHours, we write just openingHours, without the repetiton.
+
+/*2. Second enchancemend to Object Literals is about writing methods, in ES6 we no longer have to create a property
+     and set it to function Expression, we can write it in an easier way for exsample the order method!!!
+    order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    }, 
+    We skip the function expression */
+
+      
+    order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    }, will become
+
+    order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    }, 
+
+/* 3. Enchancemend is that we now can actually compute property names instaed of having to write them out manually.
+      Copmute menas calculate.
+      Lets' say we have an array called const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+      We can use this array to change the days in the openingHours array*/
