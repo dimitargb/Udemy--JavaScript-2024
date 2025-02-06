@@ -1,0 +1,29 @@
+The For Off Loop will automatically loop over the entire array, and in each iteration it wil give us access to the current
+array Element. Simply each Element logged one by one.
+
+// Loop over intire manu:
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+for (const item of menu) {
+  console.log(item); // Here we got all Elements individually loged - 'Focaccia', 'Bruschetta', 'Garlic Bread' ......
+}
+
+This is because the item variable is the allways the current Element in each iteration.
+
+In the For Off Loop we can still use the continue and break keywords !!!
+
+/*In the For Off Loop we can still use the continue and break keywords !!!
+In the For Off Loop is a pain if we need the index not the Element, becuse this Loop is ment to give you the 
+current Element, but you still can get both, but you have to do it like this:*/
+
+for (const item of menu.entries()) console.log(item) //[0, 'Focaccia'], [1, 'Bruschetta' ], [2, 'Garlic Bread' ];
+// Each of the item is now an array of the index and the Element itself.
+
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`); //1: Focaccia;  2: Bruschetta; 3: Garlic Bread
+}
+
+// Desctructuring item in [i, el]
+for (const [i, el] of menu.entries()) {
+  console.log(`${[i + 1]}: ${[el]}`); //1: Focaccia;  2: Bruschetta; 3: Garlic Bread -> new way
+}
