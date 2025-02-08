@@ -1,0 +1,42 @@
+const rest1 = {
+  name: 'Capri',
+  //numGuests: 20,
+  // If we set the number of guests to 0
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Jovanni Rossi',
+};
+
+1. The OR assignment Operator:
+
+What we want to do now is to set a default number of guets for all the resturant Objects that do not have that property*/
+The OR Operator assignes a value to a variable, if that variable is currently falsy
+
+/OR assignment Operator/
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10; -> exactely what happend here 
+
+Those are the same as the ones above!!!
+
+/OR assignment Operator/
+rest1.numGuests ||= 10; // OR Logical Assignment Operator
+
+Exactely what happend here rest2.numGuests variable is currently falsy, the value 10 is assigned!!!
+rest2.numGuests ||= 10; // OR Logical Assignment Operator
+console.log(rest1);
+console.log(rest2);
+
+2. The Logical AND Assignment Operator.
+
+// rest1.owner = rest1.owner && '<ANONIMUS/>';
+// rest2.owner = rest2.owner && '<ANONIMUS/>';
+
+/* Using the AND assignment Operator.*/
+
+rest1 &&= '<ANONIMUS/>';
+rest2 &&= '<ANONIMUS/>';
+console.log(rest1);
+console.log(rest2);
