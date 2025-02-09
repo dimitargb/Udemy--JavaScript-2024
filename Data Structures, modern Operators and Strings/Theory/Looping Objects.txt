@@ -1,0 +1,18 @@
+/*Objects are not iterable.
+We have diffrent options to loop over the Objects, we can loop over the property names(keys), over values or all togther.*/
+
+const properties = Object.keys(restaurant.openingHours);
+console.log(properties); // ['thu', 'fri', 'sat'] -> properties is an array;
+
+/*Let say we want to see how many days the resaurant is open*/
+console.log(`We are open on ${properties.length} days`); // We are open on 3 days;
+
+let openStr = `We are open on ${properties.length} days: `;
+
+// 1. Looping over property names(keys):
+
+for (const day of Object.keys(restaurant.openingHours)) {
+  //console.log(day); // thu, fri, sat
+  openStr += `${day}, `;
+}
+console.log(openStr); // We are open on 3 days: thu, fri, sat
