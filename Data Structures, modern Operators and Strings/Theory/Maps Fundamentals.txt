@@ -1,0 +1,35 @@
+/*Map in JS is a Data Structure, that we can use to map values to keys. The Data is stored in  key -value pairs.
+In maps the keys can have any type.
+In Objects the keys are always strings, but in map we can have any type of key.*/
+
+const restaurantMap = new Map();
+
+/*The easyest way to create a Map is to create an empty Map like the one above, wihtout passing anyting.
+  Then to fill up the Map we can use the Set method. Inside we pass 2 agruments:
+   1. is the key name and 2. is the name of the restaurant */
+
+restaurantMap.set('name', 'Classico Italiano'); // name of the restaurant
+restaurantMap.set(1, 'Firenze, Italy'); // location
+restaurantMap.set(2, 'Lisbon, Portugal'); // other location
+
+console.log(restaurantMap.set(2, 'Lisbon, Portugal'));
+
+//Don't forget the value can be anything and we can chain thr next Set in the end
+restaurantMap
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+//In order to read Data from a Map we use the get method, all we nned to do is to pass the name of the key!!!
+console.log(restaurantMap.get('categories')); // ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']
+console.log(restaurantMap.get(true)); // 'We are open :D
+console.log(restaurantMap.get('close')); // 23
+
+const time = 21;
+console.log(
+  restaurantMap.get(
+    time > restaurantMap.get('open') && time < restaurantMap.get('close')
+  )
+); //'We are open :D', but if time is 10 it would be 'We are closed :('
