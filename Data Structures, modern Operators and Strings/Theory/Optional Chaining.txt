@@ -1,0 +1,50 @@
+With the Optional Chaining if a cetain property does not exist. then undifined is retured immediately.
+
+
+/*Let say that we wanted to get the openenigHours of our restaurant for monday, but this property does not exsist.
+Let's pretend we do not know wether the restaurant opens on monday or not*/
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+//With the Optional Chaining if a cetain property does not exist. then undifined is retured immediately.
+// This is how it works.
+// console.log(
+//   restaurant.openingHours.mon.open // here we get Error becuse we do not use the Optinal Chaining.
+// );
+
+// Optinal Chaining:
+console.log(
+  restaurant.openingHours.mon?.open // undifined becuse property 'mon' does not exist.
+); /* Only the property before ? -> only if mon exist than open will be red.
+If not imediatelly unifined will be returned*/
+
+/*Of course we can have muliple Optinal Chainings.*/
+console.log(
+  restaurant.openingHours?.mon?.open // undifined becuse property 'mon' does not exist.
+);
+
+//Example:
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// 2. Methods:
+
+// Optional chaining on Methods -> we can check if a method exisit before we call it.
+/*The Optional Chaining will check if this method exists(order) and if does not the Nullish Operator will return 
+  its right-hand side operand 'Method does not exisit' becuse if it does not exist it will be undified and then the 
+  Nullish Operator returns his right handside opertant.*/
+
+console.log(restaurant.order?.(0, 2) ?? 'Method does not exisit');
+// If method does not exist the Nullish Operator returns 'Method does not exisit' becuse method is undifined.
+
+// 3. Arrays:
+
+/* We can use it to check if an array is empty */
+const users = [{ name: 'Dimitar', email: 'dimi@abv.bg' }];
+
+console.log(users[0]?.name ?? 'This property does not exist!');
+/*If only users exist ?(Optional Chaining), then return his name, otherwise return 'This property does not exist!'*/
+
+console.log(users[0]?.age ?? 'This property does not exist!');
