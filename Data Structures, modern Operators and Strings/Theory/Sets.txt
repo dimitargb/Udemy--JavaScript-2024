@@ -1,0 +1,53 @@
+Set is a collection of unique values.
+The Set can never have any duplicate and this property makes them usefull in certain situations.
+
+// Writing a new Set in the brackets we pass an iterable, the most common is an array.
+// Set can hold mixed data type not just arrays!!!
+// Sets are iterable like the arrays!!!
+
+const orerdsSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orerdsSet); // {'Pasta', 'Pizza', 'Rizotto'} all the duplicates are gone!
+
+
+// Set is diffrent form arrays becuse it's Elements are unique and second the order of the Elements is irelavant.
+// Passing a new Set as Stgring.
+console.log(new Set('Jonas')); //{'J','o', 'n', 'a', 's'}
+
+//We can check if a certain Element is in a Set:
+console.log(orerdsSet.has('Pasta')); // true
+console.log(orerdsSet.has('Makkaroni')); // false
+
+//We can add new Element to a Set:
+orerdsSet.add('Garlic Bread'); // adding 'Garlic Bread' to the SET
+console.log(orerdsSet); // 'Garlic Bread' is added
+
+//We can also delete Element form the Set:
+orerdsSet.delete('Risotto');
+console.log(orerdsSet); // there is no 'Risotto' in the Set.
+
+//Deleting all Elements form the Set:
+orerdsSet.clear();
+console.log(orerdsSet); // all Elements have been deleted {0}
+
+//Sets are iterables and therefore we can loop over them:
+for (const order of orerdsSet) {
+  console.log(order); //'Pasta', 'Pizza', 'Garlic Bread'
+}
+
+//In a normal code base the main usecase of sets is actually to remove duplicate values of the arrays.
+// Example:
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+/* So if we want to have an unique array without the duplicates we create Set for that */
+const staffUnique = new Set(staff);
+console.log(staffUnique); // {'Waiter', 'Chef', 'Manager'}
+
+//Now we want to convert the Set to an array:
+const staffUniqueArray = [...new Set(staff)];
+console.log(staffUniqueArray); //  ['Waiter', 'Chef', 'Manager']
