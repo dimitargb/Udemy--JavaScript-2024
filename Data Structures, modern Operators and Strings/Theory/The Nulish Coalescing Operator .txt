@@ -1,0 +1,26 @@
+The Nullish Coalescing Operator works wiht the idea of Nullish(0) values instead of falsy values.
+
+The Nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+
+Nullish Values are null and undifined it does not include 0 or empty String('')!!!
+
+So when we using the Nullish Coalescing Operator 0 and empty String are not falsy values but thruty values.
+Falsy values when we using the Nullish Operator are null and undefined.
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10; // It will return the first truthy value => restaurant.numGuests = 23
+/*Because 0 is a falsy value it will return 10 wich is the thruty value*/
+console.log(guests);
+
+const guestsCorrect = restaurant.numGuests ?? 10; // 0 -> Nullish Coalescing Operator;
+/*If we use the Nullish Operator it will return 0 becuse it does not include 0 or empty String*/
+console.log(guestsCorrect);
+
+// To solve the problem if the numGuests is set to 0, we use the Nullish Assignment Operator ??
+// Nullish Assignement Operator
+rest1.numGuests ??= 10; // 0
+rest2.numGuests ??= 10; // 10
+
+console.log(rest1);
+console.log(rest2);
+
