@@ -1,0 +1,37 @@
+There are 3 sources of Data:
+
+1. - Within the programm source code itself(status messages).
+2. - Data can come from the User Interface(UI). User can input Data.
+3. - Data can come form external sources. Data fetched from the API(Application Programming Interface).
+     We can use API to get Data from other applications.
+
+     No matter how we get the Data, we usually have the so called Colletions of Data.
+
+     To store Colletions of Data we use Data Structures.There are 4 Data Structures in JS - Arrays, Objects, Sets and Maps.
+
+A.) If we jsut need a simple list of values we use an Array or a Set.
+    Here we have the values without any description.
+B.) If we need need a key-value pair, then we need an Object or Map.
+    With the key-value pair we have a way of discribing the values, by usinf the key.
+
+For example if we are getting Data form a Web API, it usually comes in a special Data Format called JSON.
+JSON can easily be converted to JavaScript Object. 
+The most commen in JavaScript is createing an Array of Objects, becuse we need a list of Objects.
+
+We use Arrays or Sets when we need a list of values, but we do not need to describe the value.
+
+1. Use Arrays whenever you need to store values in order and when this values might contain duplicates.
+   Use Arrays when you need to manipulate Data.
+
+2. Use Sets when you are working wiht unique values.
+   Use Sets when you need to remove duplicate values from an Array.
+
+3. Use Objects whenever we need to disribe the values using keys.
+   They are easier to write and access values.
+   When you need functions for values, you need to use an Object for that.
+   Also when working with JSON Data you will most likly use Objects, unless you want to convert the Objects to Maps.
+
+4. Use Maps for key-values stores.
+   Map's keys can have any data tyep and have better performance.
+   They are easyer to iterate and it is easier to compute the size of a Map.
+   Use Maps whe you need keys that are not strigns.
