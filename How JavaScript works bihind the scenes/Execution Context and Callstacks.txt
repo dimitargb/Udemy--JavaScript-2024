@@ -1,0 +1,45 @@
+How is JS code executed?
+
+It happends in the callStack in the JS Engine.
+
+Once the code finish the Compilation phase, it means the code is ready to be executed. What happends then is that the so called
+Global Execution Context is created for the top level code. Top level code is a code that is not inside any function.
+In the beginning only the code that is outside of a function will be executed. Functions should be only executed when thay are
+called.
+Execution Context is an abstract concept, this is an enviroment in wich a piece of JS is executed.
+
+In any JS project there is only one Execution Context and is whwre top level code will execute.
+Once the top level code is finish, functions finally start to execute as well.
+For each execution function call a new Execution Context will be created, containing all the information necessary to run 
+the exact function.
+All this Execution Context together make the CallStack.
+When all functions are done executing, the Engine will keep waiting for more callBack Functions.
+The Event Loop provides this callBack Functions as we learned in the last lection.
+
+What is inside of an Execution Context?
+
+First thing inside is the Varaibale Environment
+
+1. Variable Environment. 
+
+   Here are stored all our variables and function declariations, functions and Oject arguments.
+   Each function gets his own Execution Context as soon as the function is called. So all the variables declared inside a function
+   will end up in this Varaibale Environment.
+
+2. Scope Chain
+ 
+   Scope Chain consist of references to variables located outside of the current function.
+
+3. this Keyword.
+   
+   This is a special varibale called 'this' Keyword.
+
+The content of the Execution Context is cretaed in the so called 'creation phase' which happends right before the execution.
+
+The arrow functions don't have the arguments Object and the this Keyword in them. Instead they can use their arguments Object 
+and this Keyword from their closest regular function parent.
+
+CallStack and Memory Heap make the JS Engine itself.
+
+The CallStack is a place where the Execution Context gets stacked on top of each other in order to keep track of whre we are in the programms execution. So the Execution Context on top of the stack is the one currently running and when it has finished 
+running it will be removed from the Stack and 
