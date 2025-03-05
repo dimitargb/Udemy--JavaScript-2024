@@ -1,0 +1,50 @@
+Execution Context always contains 3 parts: Variable Environment, scope chain and this keyword.
+
+Variable Environment - how variables are actually created in JS. In JS we have mechanism called Hoisting.
+
+Hoisting makes some types of variables accessible or usable in the code before they are declared in the code.
+
+Behind the scence the code is scanned for varibale declarations, before it is executed. This happends diring the creation phase
+of the execution context. Then for each variable that is found in the code a new property is created in the varibale Environment
+Object. That's how Hoisting really works.
+
+Hoisting works diffrently for variables defined as funnction declarations, let or const, funnction expressions and arrow funnctions
+and var variables:
+
+1. Function Declarations are actually hoisted and the value is set to the actual function.
+   This means that we can use function declariations before they are declared in the code, becuse they are stored in the variable
+   Environment in the Object even before the code starts executing. Function Declarations are block-scoped only in 'strict mode'.
+   We can call the result of the Function Declarations, before it is actally defined in the code.
+
+2. Varables var are also hoisted. It's value is undifined and are function-scoped.
+   Any varables declared with var will be hoisted and set to undifined.
+
+3. Let and const varables are not hoisted. Their value is set to uninitialized. Thay are block-scoped.
+   They exsist only in the block in which they where created. This variables are placed in the Temporal Dead Zone.
+   
+
+4. Function Expressions and Arrow Functions - It depneds if they were created usin var or const or let, becuse this functions are 
+   simply variables and they behave exactely same way as verables in regard to hoisting.
+   This means that function Expression or Arrow Function cretaed with var is hoisted to undifined, but if created with 
+   let or const is nto usable before it's declared in teh code, becuse of the Temporal Dead Zone.
+   We can not use function expressions before we write them in the code, unlike function declarations.
+   We can not call the result of the Function Expressions, before it is actally defined in the code becuse thay are const ot let.
+
+Hoisting is used to be able to use functions before actual declaration.
+
+As a first step dont use var to declare your varibles !!
+
+Use const most of the tiem to declare variables and let if you really need to chaneg the varibale later !!
+
+Also in order to write clean code you should declare your variables at the top of each scope !!!
+
+Finally always declare all your functions first and use them only after the declaration !!!
+
+Varables declared with const or let do not create properties on teh window Oject, just the ones created with var.
+
+var x = 1;
+const y = 2;
+let z = 3;
+
+console.log(x === window.x); // true  -> Here we test if x is property of the window Object -> Yes
+console.log(y === window.y); // false -> Here we test if y is property of the window Object -> No becuse is declared with const.
