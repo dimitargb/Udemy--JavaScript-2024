@@ -1,0 +1,36 @@
+JS is a high-level, object oriented, multi paradigm programming language.
+
+The JavaScript Engine is a computer program taht executes JavaScript code. Every brouser has his own Engine.
+The most common Engine is the Google V8 engine.
+V8 engine powers Google Chrome and Node.JS
+
+Any JavaScript Engine always contains  CallStack and a Heap.
+
+The CallStack is where our code is executed.
+The Heap is storing all the Objects that our application needs.
+
+How is actually the code compiled to a machine code(0 and 1) so that it can actually be executed afterwards.
+This happends using Compilation or Interpretation.
+
+In Compilation the entire sorce code is converted into machine code at once. The machine code is written on portable file,
+that can be executed on any computer.
+
+In Interpretation has an interpreter that runs through the source code and executes it line by line.
+The problem with Interpreted languages is that the program runs much slower than the complied languages.
+
+Modern JavaScript language now use a mix between compilation and interpreation, called just in-time compilation.
+This compiles the entire code into machine code at once and then executes it right away. Here is no poratbile file
+to execute and the execution happends immediately after the compilation.
+
+How it works:
+
+1. First Step:  as a piece of JS code enters the Engine, the first step is to Parse the code, means to read the code.
+   During the Parcing process the code is parced into a data strcture called - Abstract Syntax Tree(AST). It spreads
+   each line of code into pieces and saves this pieces into the tree in a structured way. This Step also checks if
+   there are any syntax errors. The resulting tree will later be used to generate the machine code.
+
+2. Second Ster: Is Compilation - it takes the generated AST and compiles it to a mchine code.
+
+3. Third Step: The Ecexution - this machine code gets executed right away. The Ecexution happends in the JavaScript Engine
+   called CallStack. In the background this machine code will be optimized and put back to Compilation many times.
+   This is what makes modern just in-time compilation Engines such as V8 so fast.
