@@ -1,0 +1,21 @@
+The most common JavaScript runtime is the brouser.
+
+We can imagine the JavaScript runtime as a big container wich includes all the things that we need to use JavaScript
+in this case in the brouser.
+
+1. The JavaScript runtime includes the JavaScript Engine. 
+
+2. The web API(everything related to the DOM, Timers, fecth API).
+Web API 's are functionalities provided to the Engine but which are nto part of the JavaScript languare itself.
+JavaScript gets access to this API's to the global Window Object.
+
+3. Callback queue - this is a data structure taht contains all the callback functions that are ready to be executed.
+   For example eventHandler functions. As the event happends for example a 'click', the callback function will be called.
+   The first thing what is happening after the event the callback function is put in the callback queue, then when the 
+   callStack is empty the callback function is passed to the Stack so that it can be executed.
+
+   This happends by something called the Event Loop.
+   The Event Loop takes callback functions from the callback queue and puts them in the callStack so thay can be executed.
+
+JavaScript can exsist outside of brousers. For example in Node.js
+Here insted of the API's we have mulitple C++ bindings and the so called therad pulls.
