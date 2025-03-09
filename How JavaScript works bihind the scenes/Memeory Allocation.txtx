@@ -1,0 +1,16 @@
+For diffrent types of values, memeory is actually allocated in diffrent places in the JavaScript Engine.
+Those types of values are Primitive Values or Objects.
+
+1. Primitive Data Types are: Numbers, Strings , Boolean, Undifined, Null, Symbol and BigInt.
+
+2. Objects are: Objects Literals, Arrays, Functions and more
+
+The JavaScript Engine has 2 main Components: Call Stack(where functions are executed) and Heap(where Objects are stored).
+
+So all Objects will be stored in the memory Heap.
+
+All Primitive Values are stored in the Call Stack.
+The Privitive Values are stored in the Execution Context in which they are created.
+
+Besides Primitives and Objects, there is something that we call References to Objects and thay are also stored in the 
+Call Stack.
