@@ -1,0 +1,35 @@
+How Garbage Collection works behind the scence in order to keep our Memory clean!!!
+
+In the Call Stack the variable are simply deleted when the coresponding Execution Context pops off the Stack.
+As soon as the Execution Context is gone, so are the variables as well and the Memory they ocupied is simply
+relesed for future usage.
+
+The Global variables will never be deleted.
+
+In order to delete ols unused Object from the Heap and free up memory, JavaScript Engines apply a process called
+Garbage Collection. This Garbage Collection is a cntral tool for Memory Management for any JavaScript Engine.
+
+All modern JavaScript Engines use an algorithm called: Mark and Sweep!!!
+
+1. Mark Phase:
+   All Objects are reachable from a root. Roots are string points form which the algorithm starts to look for reachable
+   or 'alive' Objects.
+
+2. Sweep Phase:
+   Allt the unreachable or unmarked Objects are deleted. 
+   Any globaly difined Objects will neverf be Garbage Collected becuse the global variable will never be deleted. 
+
+
+Memeory Leak - happneds when Objects that are no loner needed by the application is incorrectly still reachable 
+               by the Garbage Collector from one of the roots. As a result the Object is marked as 'alive' and is
+               not deleted even then if we actually no longer need oit in our code. It should be deleted, but it
+               can not.
+               In JavaScript this happends when an Object is incorrectly referenced from somewhere. 
+               Major source of those undisired refereces are old and unnessecary EventListeners and Timers.
+
+Important Topics on How JavaScript works behind the scenes are also:
+
+1. Closures (in functions);
+2. Prototypal Inheritance(Object Oriented Programming);
+3. Event Loop(Asynchronus JavaScript: Async/Await and AJAX)
+4. Advanced DOM and Events
