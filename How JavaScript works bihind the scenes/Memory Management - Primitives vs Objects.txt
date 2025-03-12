@@ -1,0 +1,21 @@
+Memory Management in the context of JavaScript is how the JS Engine alli+ocates space in memory for creating variables and later
+frees up theis memory space by memories that are no longer needed.
+
+JavaScript automatically manages the memory behind the scenes for us. This makes writing code a lot easyer tand faster and reduces the risk of making errors.
+
+Every single value in our applications goes through something called memeory lifecycle.
+In this lifecycle:
+
+1. Allocate Memeory
+   A piece of memory is allocated whenever we create a new value(to asing a new value to a new variable in our code).
+   Each time we declare a variable with a new value, no matter if it is a single value or a huge Object the JavaScript Engine
+   will automatically reserve a pice of memory to store that value.
+
+2. Use Memory
+   Then as the application runs in the users brouser the the allocated piece of memory is used whenever the stored value
+   is been accessed. For exsample to write, read or update the value.
+
+3. Release Memory
+   When the value is no longer needed, the memory that this value occupies gets released.
+   When the value is no needed anymore, it's deleted from the memory and the freed up memory can then be used 
+   for new feature values.
