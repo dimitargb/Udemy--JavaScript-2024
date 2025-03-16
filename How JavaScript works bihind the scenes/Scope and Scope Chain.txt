@@ -1,0 +1,33 @@
+Scope is the place of our code where our varibales are declared.
+Scoping cotrolles how our programm variables are organized and accessed, by the JS Engine.
+
+A function which is written inside of another function has access to the variables of teh parent function.
+
+Scope is a space or invironment in which a certain varibale is declared.
+
+A Scope of a variable is the entire region of our code where a certain var# can be accessed.
+
+We have Global Scope, Function Scope and Block Scope.
+
+1. Global Scope - The Global Scope is for top level code - varibales.
+   const me = 'Joanas';
+   const job = 'teacher';
+   This variables are declared outside if any function or block.
+   This variables are accessable everywhere in our programm, in all functions and in all blocks.
+
+2. Function Scope - Each and every function creates a scope. The variables declared inside that function scope are
+   only accessible inside that function. This si also called a local scope.
+
+3. Block Scope - everything that is between curly bracers{}
+   Example: if(year >= 1981 && year < = 1996){
+    const me = true;
+    const food = 'Avocado toast';
+   }
+
+   console.log('me) // Refference Error
+   Variables are accessable only onside the block.
+   The block-scopes only apply for variable with let or const, not var.
+   Tha variable var can be accessable still outside of the block.
+
+All functions now are block scoped only in strict mode. Functions declared inside a block are only accessable inside that
+block. So let and const variables and function are block scope.
