@@ -1,0 +1,30 @@
+Every Scope has always access to all the variables from all his outer scopes, so from all his parent scopes.
+
+If one scope needs to use a cetain variable, but can not find it in the current scope, it wil look up in the 
+Scope Chain and see if it can find the variable in one of the parent scopes. This process is called varibale Lookup.
+
+This is not working the other way aroind, it can not look for a variable inside in the inner scope.
+So one scope can only look up in the Scope Chain, but it can not look down. Only parent Scopes can be used, but no
+child Scopes!!!
+
+var is a function Scope, let and const are block Scope from ES6 onwords!!!
+
+Varables form the Global Scope we call Global Variables.
+
+Scoping asks the question: 'Where do varibales live?' or 'Where can we access a cetain varibale and where not?'.
+
+Every Scope allways has access to the variables form all its outer scopes. This is the Sope Chain.
+
+When a certain verable is not in the current Scope the Engine looks up in the Scope Chain untill it finds the variable that
+it was looking for. This is called variable Lookup!!!
+
+The Scope Chain is a one way Street - a Scope will never, ever has access to the variables of an inner Scope, only fo outer
+Scope.
+
+The Scope Chain has nothing to do with the order in wich functions were called. The order of function calls does not effect 
+the Scope Chain at all.
+
+Functions are block-scoped. They are available to call just in the block-scope just in 'strict mode'.
+
+You can have repeted variable names, but in diffrent scopes!!!
+
