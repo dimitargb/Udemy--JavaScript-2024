@@ -1,0 +1,51 @@
+The this Keyword or the this variable is a special variable, that is created for very Execution Context(every function).
+The this Keyword is one of the 3 Components of the Execution Context - Varaible Environment, Scope Chain and this Keyword.
+
+The this Keyword will always take the value of the owner of the function in which the this Keyword is used. It points to the owner 
+of the function.
+
+The value of the this Keyword is not static. Is not always the same, it depends on how the function is actually called.
+The value is only assigned when the function is actually called.
+
+Diffrent ways to call a function:
+
+1. Call as a method. 
+   The this Keyword inside that method will point to the Object on which the method is called.
+   It points to the Object, that is calling the method.
+
+2. Call the function as normal function. In this case the this Keyword will be undifined, only for 'strict mode'.
+   If not in 'strict mode', this will point to the global Object(window Object).
+
+3. Arrow functions.
+   Arrow functions do not get their own this Keyword, insted this will be the this Keyword of the surrounding function, the 
+   parent function(the lexical this Keyword). It gets picked up from the outer lexical scope of the Arrow function.
+
+4. Function called as an eventListener, then the this Keyword will always point to the DOM Element that the handler function 
+   is attached too.
+
+5. We can call a function using the new Keyword, call, apply or bind methods.
+
+This will never point to the function in which we are using it.
+This will never point to the variable Environment of the function.
+
+We should never use an arrow function as a method.
+
+The Arguments Keyword, just as the this Keyword is only available in regular functions.
+
+The arguments Keyword is just like  this Keyword.
+The arguments Keyword, just as the this Keyword is only available in regular functions.
+
+// arguments Keyword
+const addExpression = function (a, b) {
+  console.log(arguments); // this can be useful when we need a function to accept more parameters then we specify.
+  return a + b;
+};
+addExpression(2, 3);
+addExpression(1, 2, 3, 4); // adding more arguments than we specify.
+
+const addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+
+addArrow(2, 4); // udifined becuse arguments Keyword only exsist in regular functions
