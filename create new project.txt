@@ -1,0 +1,16 @@
+npm init
+The project will be called recipes.
+description: Recipe Application.
+author: Dimitar Damianov
+That's all for start now.
+It has created the package.json file of the app.
+
+We change the "index.js", to "index.html",
+In the  "scripts" section we change it to start insetad of test and we start parcel index.html.
+This si gonna be our entry point and than we add out 'build' script.
+
+In order to run parcel we need to install it.
+npm i parcel@2 -D
+
+Now let start our parcel by running out npm script by typing: npm run start.
+Than nom i sass@1.26.10
