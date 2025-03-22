@@ -1,0 +1,28 @@
+DOM is coming form Document Object Model.
+DOM is a structured reperesentation of HTML documnets.
+The DOM allows us to use JS to access HTML elements and styles in order to manilulate them.
+
+For exsample we are able to change text, HTML, attributes and css styles.
+The DOM is a simple connection point between the HTML documnet and JS code.
+
+The DOM is automatically created in the brouser as soon as the HTML page loads and is stored in a tree structure.
+In this tree each HTML element is one Object. It starts allways with the DOM Object in the top.
+This Object serves as an entry point into the DOM.
+ documnet.queryselector();
+
+The queryselector method is available on the documnet Object. We need DOM to start selecting elements.
+
+The first child element od the documnet is usually the html element.
+
+Next HTMLhas 2 child elements <head></head> and <body></body>. They are siblings in the DOM as well.
+Inside the head elemnt we have child elemnt title.
+Inside the body we have section as child elemnts and inside section we have paragraph and image elements as child
+elements os section.
+
+The paragraph has a child the link element <a></a>.
+
+The DOM tree has more then just element Nodes, he also has Nodes for all the text itself, comments and other staff.
+The DOM methods are not part of JavaScript, they are part of teh Web API's.
+
+The Web API's are Libraries that the brouser impelemnts. API - Application programming Interface and this
+Libraries can interact wiht JavaScript.
