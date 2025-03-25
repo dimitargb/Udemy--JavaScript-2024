@@ -1,0 +1,26 @@
+Event is something that happends on a page. For example mouse click, or a key press or many others.
+With the ecnetListener we can wait for certsin venet ot happend and than react to it.
+
+In order to listen to events we firts we need to select the element where the event should happen.
+So firts we select this element - Check!
+
+document.querySelector('.check');
+anf now on this element we can call the addeventListener() method
+
+Into this addeventListener() method we first need to pass the type of the event.
+So the name of the event is 'click'. But now we need to tell the eventListener what to do by definong a function.
+This is the second argument we pass in.
+This function will contain the code that should be ececuted whenevr this click event happends on this check button.
+Inside this function we need to specify what should happen.
+
+What we want to do is to save the number typed into a variable:
+
+
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = document.querySelector('.guess').value;
+
+});
+
+Becuse guess is astring we have to first convert it to a number with the Number function.
+After this we have to check wheter there is avalue in the Ckeckbox. If there is no value, 
+we print a message and firts we select this element.
