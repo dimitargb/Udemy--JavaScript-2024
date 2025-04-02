@@ -1,0 +1,17 @@
+First we need a variable for the high score.
+let highScore = 0;
+
+This way the first score it's allways gonna be the highScore, becuse is greater than 0.
+
+We will check for the highScore where the player won the game in this if block.
+
+The check we will do is to ask whether the score is greater than the current highScore, than the current score will become
+the new highScore.
+
+ if (score > highScore) {
+      highScore = score;
+       document.querySelector('.highscore').textContent = highScore;
+    }
+Now all we have to do is to display the new highScore in the box.
+
+ document.querySelector('.highscore').textContent = highScore;
