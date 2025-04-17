@@ -1,0 +1,46 @@
+The attributes basically descibe the elements.
+Let's create a link which is inside of the pararaph. We can nest elements inisde one another.
+For exsample h1 and p are child elemnts of the body element.
+To add a link we use the ancor element <a href></a>.
+Here we descibe the ancor element using the href attribute.
+
+href -> hypertext reference, this is an inline element.
+h2 -> is a block element, becuse it created a new line.
+
+Another element which needs attributes is th image element.
+For image we use the <img src=""> Tag and the src attribute. then in here we can specify any image form the 
+current Folder or we can set the image url.
+The image element does not have a closing Tag and we need to close it oursef.
+
+As we see diffrent elements have diffrent attributes.
+
+There are 2 very important attributes, that we can use on all elements - > Classes and Id.
+We use Classes and Id -s to name elements so we can select them in CSS in order to style them and also 
+to selct them in JS when we do DOM manilulations. So Classes and Id are very important for identify elements.
+We can add them on any element. So let's add a class to the first pararaph.
+
+Besides Classes we also have id and let's add one tho the image called 'course-image'.
+The diffrence betweeen Classes and id, is that id have to be unique!!!
+Each id can only be used once on the page. while Classes can be used over and over again.
+
+So now lets create a HTML form which has to be in a box. The most generic box is a div element.
+<div></div>
+In CSS we use a dash - to connect two words by nameing classes ot id. For exsamle: id="course-image".
+Than we craete a heding for this form:
+<h2>Your name here!</h2>
+Than we add another pararaph here:
+<p>Please fill in this form :)</p>
+And now lets use an input element. Here we yse the type attribute to specify the type of data that should be inputet into the elelent and we can specify a placehodlder as well.
+<input type="text" placeholder="Type your name here" />
+And then the form usually has a button, so we have than a button element.
+<button></button>
+
+Insted if <div></div> we use <form></form> when we have a form like here.
+
+ <form id="your-name">
+      <h2>Your name here</h2>
+      <p>Please fill in this form :)</p>
+
+      <input type="text" placeholder="Type your name here" />
+      <button>OK!</button>
+</form>
