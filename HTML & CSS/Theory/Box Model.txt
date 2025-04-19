@@ -1,0 +1,56 @@
+The Box Model is one of the most fundsmental Parts of CSS, becuse it defines how the elements are displayed on the web page
+and how they are sized. Each element can be seen as a box and each box can have a width, hight, padding, margins and border.
+
+We can specify all this using css properties. They are all optional, there can be boxes with no padding, margin and others.
+
+1. Content of the box where all the text, images and other content can be specified. We can define his hight and 
+width using the corresponding css properties.
+
+2. Padding is the transparent area arround the content, but is still inside of the box.
+
+3. Border is sarounding the padding.
+
+4. Margin is outside of the box. If we want to create some space between 2 elemnts we will use their  margin property.
+
+5. Fill area - is the whole box before the margin. This area gets filled with background color or background image.
+
+If we want to rest all elements we do the so called global reset, to do theat we need to select all the elelements.
+For that we have a special selector, called star * selector. With this we can select all elements form the page.
+And what we do is to set it like this:
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+Now we can add margin to the bottom of h1: margin-bottom: 25px;
+
+If we want to seclect all paragraphs we use the p selector.
+If we want to selct the input element and the button element we write input, button{} in the style.css file.
+
+input,
+button {
+  padding: 8px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+Another very important selector is the child selector.
+If for example we want to select the h2 form the form(becuse we have another h2 before that), we can use the 
+id of the form to tell css that we are selecting the child wich is inside the form with this id.
+So we use the id your-name and then the other selector h2:
+
+#your-name h2 {
+  color: green;
+}
+
+This way we select the h2 in the form with id #your-name.
+
+Another thing is to specify the size of the image. So on the image we specify either a hight or a width attribute.
+Here we usually specify the width and the hight will be set automatically:
+
+#course-image {
+  width: 300px;
+}
+
