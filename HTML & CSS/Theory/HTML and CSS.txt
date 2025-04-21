@@ -1,0 +1,13 @@
+The only thing we need to do is to type ! and a new htm will open!!!
+
+index.html is always the main fail in any project.
+HTML - Hypertext Markup Language. We use it to descibe the content of web pages.
+we write <html></html>
+It always has a head and a body -> <head> <body>
+<html>
+  <head> </head>
+  <body></body>
+</html>
+
+Whatever we put in the head is like the settings of the page, for example the title.
+Whenever we put onto the body, will be actually visable on the page.
