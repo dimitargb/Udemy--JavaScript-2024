@@ -1,0 +1,62 @@
+We ca write css write in the html file usong the style element.
+<style></style>.
+The style element should go into the head.
+
+To style Elements we need first to select them.
+The most common is the elemtn selector , for exsample body.
+
+So we write body, then curly bracers {
+   backgroundcolor: azure,
+} and inside we write our CSS declaration, for example background color: azure.
+
+What is written in the curly bracers is the - declaration block and  backgroundcolor: azure, is the declaration,
+where backgroundcolor is a property and azure is the spcified value.
+
+But usually we write our css in an exertanl css file, like we write JS in an external script.
+
+So let's create this separate css file and call it style.css
+
+We link the style.css file to the html element by using the link element. And we need to cpecify the rel attribute and select
+it to stylesheet.
+<link href="style.css" rel="stylesheet"/>
+
+Now we can write all our styles in a separate file.
+We add the font-family property to Arial:
+
+body {
+  background-color: rgb(255, 247, 201);
+  font-family: Arial, Helvetica, sans-serif;
+   font-size: 20px;
+}
+
+The font family property is a property that gets inherited. So all the child elements of the body element, will 
+automatically the font-family asigned to them.
+
+Now most peoperties will not be inherited, but generally all the peoperties related to fints will be inherit.
+Like font-size for exsample and let set it to 20 px.
+
+We have diffrent font-sixes for h1 and for h2 wich are predifined in the html file, but we can override them by
+specifying diffrent values in the style.css file.
+
+
+h1 {
+  font-size: 30px;
+}
+
+Now lets select elements based on their classes. For exsample we have mulitple elements wich have class 'first'.
+The Class selector is using the dot(.) -> .first
+
+.first {
+  color: red;
+}
+
+And now both paragraphs wiht this class name are coler red.
+
+Finally let's also format our form, here we have the id = 'your-name'.
+To select an id instead of dot we use the # symbol. 
+
+#your-name {
+  background-color: #ffe600;
+  border: 5px solid #444444a0;
+}
+
