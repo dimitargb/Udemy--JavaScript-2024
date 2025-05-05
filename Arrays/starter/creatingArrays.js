@@ -1,0 +1,69 @@
+'use strict';
+/* So far we learn to predifine arays */
+const arr = [1, 2, 3, 4, 5, 6, 7];
+const arr1 = new Array(1, 3, 5, 7, 9);
+console.log(arr);
+
+/* We can also generate arrays programatically, without to define the items manually. The easyest one is to use the 
+   Array Construction Function. Let's create a new array x, with only one argument 7 */
+
+// Creating an empty array:
+const x = new Array(7); // it creates a new array with 7 empty Elements in there [empty × 7] and contains nothing
+console.log(x); // [empty × 7]
+// CREATING ARRAYS :
+
+/* There is one method that we can call on this empty array and this is the fill() Method. What we need to do is to 
+   pass in a value and it will fill up the entire array with this specifi c value*/
+
+// Empty Array with Fill MEthod:
+x.fill(
+  1,
+  3,
+  5
+); /* Besides the valu 1 we can also specify where we want to start to fill, lets say at index 3 and
+               also where to end let's say 5 */
+
+//console.log(x); // [1, 1, 1, 1, 1, 1, 1] the fill Method will fill the entire array with this value;
+console.log(x); // [empty × 3, 1, 1, 1, 1] it starts to fill from index 3
+console.log(x); // [empty × 3, 1, 1, empty × 2] ending at index 5
+
+/* Of course we can use the fill Method on pther arrays */
+arr.fill(23, 4, 6); // let's fill it with number 23 at position 4 to 6;
+console.log(arr); // [1, 2, 4, 5, 23, 23, 7] the 6 and 7 from the original array are missing.
+
+/* If we want to create for exsample our arr programatically we use the Array.form Function. Into this Function 
+   we first pass an Object with the length Property and the second argument is a mapping Function. We write an arrow 
+   Function wich will return 1 in each itteration. This will return 1 in each Position. */
+
+// CREATING NEW ARRAY PROGAMATICALLY:
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y); // [1, 1, 1, 1, 1, 1, 1]
+
+// CREATING ARRAY FROM 1 TO 7
+const z = Array.from({ length: 7 }, (el, index) => index + 1);
+const t = Array.from({ length: 7 }, (_, index) => index + 1);
+console.log(z); // [1, 2, 3, 4, 5, 6, 7];
+console.log(t); // [1, 2, 3, 4, 5, 6, 7]; we use the _ because the el Property we dont use, bur we still need it.
+
+/* Let's say we do not have the movements stored into an array, only stored into the User Interface. But now we need to
+   somehow calculate their sum, so we need the somehow get them first from the userInterface and do the calculation besed on them. So let's create a varibale called movementsUI. So we write Array.from(element we want to covert to an array)*/
+
+const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+console.log(movementsUI);
+
+/* We can attach an EventHandler to every Object, it doesn't have to be a Button */
+
+/* We will use Array.from to create an array from the result fo the document.querySelectorAll, wich is a NoteList, not
+   an array, but it can easily be converted to an array using Array.fom() and as a second Step we included a mapping Function
+   that transformed the initial array to an array wiht Numbers as we wanted */
+
+labelBalance.addEventListener('click', function () {
+  /* Here we can use the second argument of the Array.from() Function, wich is the mapping callBack Function */
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  //console.log(movementsUI.map(el => Number(el.textContent.replace('€', '')))); // ['1300', '70', '-130', '-650', '3000', '-400', '450', '200'] this are the values from the UserInterface using the map Method;
+
+  console.log(movementsUI); // [1300, 70, -130, -650, 3000, -400, 450, 200] The UI array
+});
