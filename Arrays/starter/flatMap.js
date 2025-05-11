@@ -1,0 +1,29 @@
+'use strict';
+
+// Flat and flatMap
+
+/* Let's say we have an array with some arrays in it(nested array) */
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+
+/* If we want to take all the Elements in the subarray and put them togther into one big array, with all number form 1 to 8.
+   This is simple using the flat method. This method removes the nested arrays and flattened the array !!! */
+console.log(arr.flat()); //  [1, 2, 3, 4, 5, 6, 7, 8];
+
+/* Now let's say we have an array which is deeper nested then the previous one. So we have an array inside and array inside 
+   another array. */
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat()); // [Array(2), 3, 4, Array(2), 7, 8] in this result we still have the 2 inner arrays;
+/* So the flat method only goes one level deep whenb flsattening the array, but if we run it with 2 leve deep we
+   will get the result wihtout any inner arrays in the array */
+
+console.log(arrDeep.flat(2)); // [1, 2, 3, 4, 5, 6, 7, 8] This is because it goes into the second level of nesting.
+
+// FlatMap method -> combains a flat and a map method into one method for better performance.
+/* FlatMap also does mapping it needs to recieve the same callBack as a map method. This is essetially
+   a map method that flattens the result. The flatMap method only goes one level deep, so if we need to go deeper
+   then one level, we still need to use the flat method !!! */
+
+const overallBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, el) => acc + el, 0);
+console.log(overallBalance2);
