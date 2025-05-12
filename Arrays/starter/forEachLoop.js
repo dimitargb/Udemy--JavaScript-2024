@@ -1,0 +1,48 @@
+'use strict';
+// For Each Loop
+
+/* Let's say we want to loop over the movements array in order to print a message for each movement in this bank account 
+   The positive values are depositis and negative values are withdrows.  So we can print somthing like saying wethw er the
+   user deposited or withdrew some money. */
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+/* We start with the for off loop. To reach indexes we use movements.entries.
+   It returns array of arrays. The firts position contains the current index[i] and second value [movement] */
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`); // Movement 1: You deposited 200 using the indexes
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`); // Movement 3: You withdrew 400 using the indexes
+  }
+}
+
+// Math.abs -> is the absolute value removing th (-) sign.
+
+/* For Each Method, requires a Callback Function. For Each is a higher Order Function. The ForEach Method here will call the 
+   Callback Function here. For Each Method will loop over the array and on each iteration will execute the CallBack Function.
+   It will also pass in on each iteration the current Element of the Array as an argument (movement). */
+
+/* Here is a lot easier to get access to the current index. The Each Method passes in the current Element, the index and the array.
+   There for we can specify them in the Parameter list (movement, index, arr). What metters here is the order of the Parameters.
+   The first Parameter is allways the current Element, second is the current index and the last one is the entire array */
+
+console.log('------------FOR EACH LOOP ------------');
+
+movements.forEach(function (movement, index, arr) {
+  if (movement > 0) {
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+});
+// Bihind the scenes in Iteration(0) it will call the function with the value of 200, next with 450 utill the End of the array .
+// Iteration 0: function(200);
+// Iteration 1: function(450);
+// Iteration 2: function(-400);
+
+/* This is the concept when we use a Callback Function to tell another Higher Order Function what it should do */
+
+/* Now when should we use forEach and when should we use the for off Loop ?
+   One big diffrence is that you can not use break or continue in the ForEach Loop. So if you need to break the loop, than you
+   need to use the for off Loop, other than that is really to personal prefference. */
