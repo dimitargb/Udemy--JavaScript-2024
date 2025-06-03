@@ -1,0 +1,60 @@
+Methods are simply functions that we can call on Objects.
+They are Functions attached to Objects. this means that Arrays themselfs are also Objects.
+So Arrays are Objects and they get access to specila build-in methods.
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// 1. Slice Method
+
+/* With the Slice Method we can extract we can extract part of any array, without changing the original Array.
+   The first Paramether is the index at which we will start extracting */
+
+arr.slice(2); // We will start form 'c' intill the End. It will return a new Array but id does not change the the original array.
+console.log(arr.slice(2)); //  ['c', 'd', 'e']
+
+/* Of course we can also define the End Parameter */
+console.log(arr.slice(2, 4)); // ['c', 'd'] -> the end Parameter is not encludet is the index before that index 4 is 'e'.
+
+/* We can define a negetive Parameter and it will start form the End of the Array. This way we can get the last Element of Array */
+console.log(arr.slice(-2)); // ['d', 'e'] It wil take the last 2 elements of the Array.
+
+console.log(arr.slice(1, -2)); // It starts in index 1 and extraxt everything exept the last 2 Elements -> 'b', 'c';
+
+/* Finally we can use the Slice Method to create a shallow copy of any Array. To do that we call it wihtout Arguments */
+console.log(arr.slice()); // ['a', 'b', 'c', 'd', 'e'] This is a shallow copy.
+
+// 2. Splice Method
+
+/* The Splice Method works the same way as slice method, but it does change the Original Array */
+//console.log(arr.splice(2)); // ['c', 'd', 'e'] form index 2 to the End, but Original array is now ['a', 'b']
+console.log(arr); // ['a', 'b']
+
+/* We usually use Splice to delete on or more Elements form the Array */
+/* Let's for example remove the last elements from the Array */
+console.log(arr.splice(-1)); // e because is the last element for the array.
+console.log(arr.splice(1, 2)); // ['b', 'c'] the result is that b and c are deleted, onliy 'a' and 'd' remain.
+/* Here we start from position 1 and delete 2 Elements. So the second Parameter is the number of Elements we want to delete */
+
+// 3. Reverse Method
+
+/* The Reverse Method does mutate the original array */
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j'] -> reverse
+console.log(arr2); // ['f', 'g', 'h', 'i', 'j']  the originsl array has changed !!!
+
+// 4. Concat Method
+
+/* this method is used to concatinate 2 arrays. Concat does NOT mutate the original arrays. */
+const letters = arr.concat(arr2); // here we specify the second array !!!
+console.log(letters); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+// We can simply also do this:
+const newLetters = [...arr, ...arr2];
+console.log(newLetters); // is the same like the one above -> ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+/* This does not mutate any of the involved arrays */
+
+// 5. Join Method
+
+/* The reswult of this method is a string with the separator we put in the brackets */
+console.log(letters.join(' - ')); // a - b - c - d - e - f - g - h - i - j
