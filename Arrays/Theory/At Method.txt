@@ -1,0 +1,24 @@
+// 1. At Method:
+
+/* The newst method in 2022 is the at method. */
+
+const arr = [11, 23, 65];
+console.log(arr[0]); // 11
+
+/* Now with the new add method we cna do the exact same thing using a method */
+console.log(arr.at(1)); // 23
+
+/* Let's say we want to get the last element of the array. Let's suppose that we do not know the length of the array.
+   We would write somthing like this */
+
+// getting the last array Element(traditional way)
+console.log(arr[arr.length - 1]); // 65 this is the last Element of the array
+console.log(arr.slice(-1)[0]); // we use -1 to get the last Element of the array
+
+// getting the last array Element(with the new at method)
+console.log(arr.at(-1)); // 65 is the last element of the array. The negative index -1 starts counting from the end !!!
+console.log(arr.at(-2)); // 23 is the second last Element from the array.
+
+/* The at() method works on strings !!!  */
+console.log('Dimitar'.at(1)); // i is the second letter from the string !!!
+console.log('Dimitrakis'.at(-1)); // s is the last letter from the string !!!
