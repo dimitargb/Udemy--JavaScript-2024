@@ -1,0 +1,31 @@
+In JS there are 3 very important array methods that we use all the time to perform Data Transformation.
+These are methods to create new arrays, based on transforming Data form other Arrays !!!
+
+Those methods are map, filter and reduce !!!
+
+1. The map method is a method to loop over Arrays.
+   Map is simular to the forEach method, but with the diffrence that map creates a brand new Array, based on the original.
+   The Map method takes an array, loopes over that array and on each iteration it applys a callBack Function that we specify in our code to the current array Element. Example */
+const arr = [3, 1, 4, 3, 2]; // we want them to be mulitply by 2
+const mappedArray = arr.map(el => el * 2);
+console.log(mappedArray); // [6, 2, 8, 6, 4]
+
+// 2. Filter method is used to filter Elements form the original array, wich satysfy a certain condition.
+/*  Let's say we are only looking for elements grater than 2. */
+const fliteredArray = arr.filter(el => el > 2);
+console.log(fliteredArray); // [3, 4, 3]
+
+Elements for wich the condition is true will be icluded in a new array that the filter method returns. All other Elements
+will be filtered out. They will not be included in the new array.
+
+// 3. Reduce method
+/* We use the Redice method to reduce all array Elements down to one single value. For example if we want to add all Elements of
+   the array into one value, we need to specify the accumulator variable. Than as the Reduce method loops over the array it
+   keeps adding the current element otno the accumulator, untill in the End of the loop we have the total sum of all the Elements */
+
+const sumElements = arr.reduce(
+  (accumulator, initialValue) => accumulator + initialValue
+);
+console.log(sumElements); // 13
+
+/* There is no new array in the Reduce method, but only the reduced value */
