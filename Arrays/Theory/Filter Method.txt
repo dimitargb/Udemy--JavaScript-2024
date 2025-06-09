@@ -1,0 +1,29 @@
+
+// Filter Method -
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+/* This method gets access to the current Element(el) and the index and the entire array. 
+   What we want to do here is to create an array of the deposits. Deposits are only the movements above 0. So we want to filter out the negative values. So only the values that pass that condition will make it to this array.*/
+
+const deposits = movements.filter(function (el, i, arr) {
+  return el > 0; // this is the condition
+});
+
+console.log(deposits); // [200, 450, 3000, 70, 1300] -> this way we only get the positive values here.
+
+/* Using the For Off Loop */
+/* If the current element is more then 0, we push this element into new array */
+
+const newDeposit = [];
+for (const deposit of deposits) {
+  if (deposit > 0) {
+    newDeposit.push(deposit);
+  }
+}
+console.log(newDeposit); // [200, 450, 3000, 70, 1300]
+
+/* Creating an array of the withdrow */
+
+const withDrowArr = movements.filter(el => el < 0);
+console.log(withDrowArr); // [-400, -650, -130]
