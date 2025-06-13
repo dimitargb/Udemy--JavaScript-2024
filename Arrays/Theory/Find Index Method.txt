@@ -1,0 +1,31 @@
+The findIndex Method works the same way as find method.
+
+/* A good example of the findIndex method in the application is the closeAccount Dev in the app. 
+   In our app closing an account means deleating thr account Object, from the accounts array. To delete an Element form 
+   an array we use the splice method. But for the splice method we need the index at wich we want to delete. This index is 
+   coming from the findIndex() method.
+   So let's first select the button and attach an eventHandler to it. This is the btnClose. We use the event as Parameter
+   input, and we have eventPreventDefult becuse we hav a form.The first thing we need ot do is to check if the credetinals are correct. This means to check if the username we inputet there is equal to the currentUser and the same for the PIN */
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    // Deleting the curent Object, we use the splice method starting from certain index and we remove 1 Element (index, 1)
+    // The findIndex will return the index of the first Element of the array, that matches this condition.
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+
+    // Delete account
+    accounts.splice(index, 1);
+    console.log(accounts);
+    //Hide UI
+    containerApp.style.opacity = 0;
+  }
+
+  inputCloseUsername.value = inputClosePin.value = '';
+});
