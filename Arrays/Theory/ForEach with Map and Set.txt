@@ -1,0 +1,25 @@
+/* ForEach with Maps */
+
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+// We can call forEach on a Map.
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`); // USD: United States dollar ; EUR: Euro; GBP: Pound sterling
+});
+
+/* ForEach with Set */
+// Here we need to pass an iterable, so we use an array here:
+
+const currenciesUnique = new Set(['USD', 'GBP', 'EUR', 'USD', 'EUR']); // this creates an Object
+console.log(currenciesUnique); // {'USD', 'GBP', 'EUR'}
+
+/* So let's call firEach on this Set:  
+   The Set does not have key and indexes !!!*/
+
+currenciesUnique.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`); // USD: USD; GBP; : GBP; EUR: EUR
+});
