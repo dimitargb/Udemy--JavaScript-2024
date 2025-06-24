@@ -1,0 +1,19 @@
+1. We can group arrays by different Categories by using the Object.groupBy function
+
+2. If we want to create a new Array from scratch we can use Array.from Function, or we can use the array Constructor
+   new Array(n) and pass the number of the empty elements(n), that this array contains.
+   
+   new Array(n) -> creating new array with n empty Positions(use together with fill method).
+
+3. To join 2 or more arrays we can use the spread Operator:
+
+   [...arr1, ...arr2]
+
+4. If we wsnt to get all the unuque values of an array we can placed them into a new Set:
+
+   [...new Set(arr)]
+
+5. If we want to find all Elements present in 2 arrays, we can covert them into Set's, use the intersection method on the Set 
+   and the spread the result into a bran new array:
+
+   [...new Set(arr1).intersection(new Set(arr2))];
