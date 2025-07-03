@@ -1,0 +1,33 @@
+// Reduce Method -
+
+/* We use  the Reduce Method to calculate all the Elements in an array to one single value! 
+   Let's try this with our movements array. The result will be the balance of the account. The balance will be one value, not
+   the entire array. The reduce Function also gets a CallBack Function. Here the first Parameter is always the accumulator (acc), then the current Element of the array (el), the secon one is the current index (i) and the thord one is the entire array. The accumulator keeps accumulating the value that we want to return. In case that we add all the numbers together that will be the sum. Reduce loops over the array and calls the CallBack Function in each iteration. But the Reduce method has a second Parameter after the curly bracer, this is called the initial value of the accumulator, in our case 0. This is the initial value in the first Loop iteration.*/
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// Accumulator(acc) is accumulating the values of all the Elements of the array.
+
+const balance = movements.reduce(function (acc, el, i, arr) {
+  console.log(`Iteration number ${i}: ${acc}`);
+  return acc + el;
+}, 0); // 0 is the initial value, the value from wich we start to add to the accumulator.
+console.log(balance); // final value -> 3840
+
+/* Let's do this with the for Off Loop */
+
+let balance2 = 0;
+for (const el of movements) {
+  balance2 += el;
+}
+console.log(balance2); // 3840
+
+// Reduce Method with an arrow Function:
+console.log(`-----------REDUCE METHOD AS ARROW FUNCTION-----------`);
+
+const balance3 = movements.reduce((acc, el, i) => {
+  console.log(`Iteration number ${i}: ${acc}`);
+  return acc + el;
+}, 0);
+
+console.log(balance3);
