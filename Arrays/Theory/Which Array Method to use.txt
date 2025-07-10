@@ -1,0 +1,56 @@
+In order to find out wich method to use you need to ask yourself a question do I want the original array, or do I want 
+a new array based on the original?
+
+Do I want an array index, or do I want to retrieve an entire array Element?
+
+Or if I want to know if an array includes a certain Element, or I just want to get a new string, to transform the array
+to a new value or simply loop over the array.
+
+1. Methods that mutate the array:
+
+   If we want to add an Element to the original Array, we can use push(start) or unshift(end) methods.
+   If we want to remove from the original array we can use, pop(end), shift(start) and splice methods
+   We can use as well the reverse, sort and fill methods.
+
+   These methods should usually be avoided !!!
+
+2. If we want to create a new array based on the original array:
+
+   The most streight forward method is the map(loop) method.
+   We can create new arrays bu using filter(condition) method.
+   We can take a portion of the original array by using the slice method.
+
+   If we want a new array where one of the items is replaced we use the with method.
+   We can also flatten the origina array by using flat ot flatMap methods.
+
+   Also if we don't want to change the original array, than we can use toReversed, toSorted, toSpliced methods.
+   Those are non-destructive methods, which will return brand bew arrays.
+
+   We can concatened or join 2 arrays using the concat(joining two arrays) method.
+
+3. If we need the array index we can use:
+
+   indexOf(based on value) method; 
+   findIndex(based on test condition) and  findLastIndex(based on test condition) method seacrh for an Element in the array
+   based on the test condition, that we provide in the callBack Function. Both give us the index of a certain Element
+   in an array.
+
+4. If we need the array Element itself, we can use the find(based on a test condition) or findLast(based on a test condition)
+   methods.
+
+   We can aslo use the at(based on a position) method.
+
+5. If we want to know wether the array includes a certain Element we use includes(based on a avlue) method.
+   
+   We can also use the some(based on a test condition) method and every(based on a test condition) method based on a callBack.
+   The some method will return true if at least one element of the array satisfy the condition.
+   The every method only returns true if all of the Elements satisfy the condition.
+   Thise 3 methods all return a Boolean value, helpful in if elase statement or a turnery Operator.
+
+6. If we want to just transform an array into a string we use the join(based on a separator) method.
+
+   If we want to reduce the entire array into just one value, we use the reduce(based on a accumulator) method.
+   This value can be of any type, number, string, boolean, even a new array or a new Object.
+
+7. If we just want to loop over an array, without producing any new value we use forEach(based on callBack) method.
+   This method does not create a new array or a new value.
