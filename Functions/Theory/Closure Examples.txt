@@ -1,0 +1,54 @@
+'use strict';
+// We start by defining an empty variable and then a Functio Expression
+
+// Example 1
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+g();
+f(); // 46
+console.dir(f); // Closure if the value of a
+
+// f was Reasigned to h Function
+h();
+f(); // 1554
+console.dir(f); // Closure if the value of b
+
+/* The Closure can change as the variable Re-assignes to b in our exsample */
+
+// Example 2
+const boardPassengers = function (numPassingers, waitTime) {
+  const perGroup = numPassingers / 3;
+
+  // using a timer Function
+  setTimeout(function () {
+    console.log(`We are now boarding all ${numPassingers} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, waitTime * 1000);
+
+  console.log(`We'll start borading in ${waitTime} seconds`);
+};
+
+//console.dir(setTimeout);
+/* The setTimout Function needs 2 Parameters. First is a function that will be executed after a certain time, the second Parameter
+   is the miliseconds 1000 menas 1 second. It means that what is in the funtion will be executed in 1 second */
+
+/*setTimeout(function () {
+  console.log('Hello 👍');
+}, 3000); // 'Hello 👍 will appear in 3 sec !!! */
+
+// calling the function
+const perGroup = 1000;
+boardPassengers(180, 3);
