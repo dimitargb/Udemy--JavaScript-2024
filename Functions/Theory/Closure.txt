@@ -1,0 +1,38 @@
+'use strict';
+/* We don't create closures anually like we create a new arrey or new function. It happens automatically in certain situations.
+   We just need to recognize those situtaions*/
+// this function will create a closure
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passingers`);
+  };
+};
+
+const booker = secureBooking();
+booker(); // 1 passingers -> calling the booker function
+booker(); // 2 passingers -> calling the booker function
+booker(); // 3 passingers -> calling the booker function
+
+/* The Closure makes a function rememebr all the variables that exsisted at the function birth place. If an Obect is reachabel by 
+   a Closure it can not garbage Colected and stays in the Heap Indefenetly. The passingerCount varibale still exssists becasue 
+   it is infact reachable by a Closure, otherwise it will be deleted by the garbage Collector. In this case the JS engine moves the
+   variable in to the Heap where it can stay forever, because is reachable by a Closure */
+
+/* In our Function the Closure is the connection between the booker Function and the secureBooking Function by the passingeCount
+   variable. It means that any Function has allways access to the variable invironment of the execution context in which the function was created. In the case of booker this function was created in the execution Context of secureBooking Function, 
+   there for the booker Function will get access to the passengerCount Varibale invironment. This is how th booker Function will be able to read or manipulate the passingeCount variable. This connection we call the Closure !!! */
+
+/* What metters here is that the booker Function has access to the passengerCount variable, becouse is defined in the scope,
+   in which the booker function was actually created */
+
+/* A Closure gives the Function access to all the varibales of it's Parent Function, so the Function in which it is defined even  
+   after that Parent Function has returned. So the Function keeps a reference to it's outer Scope, even after that outer Scope
+   it's gone, which peserves the scopechain through time. */
+
+/* A Closure makes sure that a functio doesn't loose connection to a variables that existed at the Function's birthplace */
+
+// We can look where the closure has access by calling console.dir(booker) and it says closure
+console.dir(booker);
