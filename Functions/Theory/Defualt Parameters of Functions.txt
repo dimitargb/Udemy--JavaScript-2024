@@ -1,0 +1,38 @@
+Sometimes is useful to use functions where some Parameters are set by default, this way we do not have to pass them in
+manually in case we dont want to change the defualt.
+
+'use strict';
+// Let's create a vaery basic booking Function, without the default Parameters first.
+/*On top of the function we create an array wich will contain this bookings, which is empty */
+const bookings = [];
+
+/* Setting Default Parameters of a function numberOfPassenegers = 1,  price = 1.99;
+    and we can use the values of the other Parameters set before it and any expression on the defult values, example 1.99 * 2
+    used before it */
+const createBooking = function (
+  flightNumber,
+  numberOfPassenegers = 2,
+  price = 3 * numberOfPassenegers
+) {
+  // now we create an Object with the properties passes into the function
+  /* Let's say we want to give a defult value to a numberOfPassenegers = 1 */
+  /* This is the old way of writing the defult value from ES5, now we write it directly in the parameters.
+  numberOfPassenegers = numberOfPassenegers || 1; // because the numberOfPassenegers is a falsy value result will be || 1 ;
+  price = price || 1.99; // because the price is a falsy value result will be || 1.99 ; */
+
+  const booking = {
+    flightNumber,
+    numberOfPassenegers,
+    price,
+  };
+  console.log(booking);
+  bookings.push(booking);
+  //console.log(bookings);
+};
+
+createBooking('LH123');
+createBooking('LH123', 2, 700); // Overwriting the defualt values, which we set to the function.
+createBooking('LH123', 5); // Here we can not scip the second parameter, becuse it will be mapped to the third parameter.
+
+// If we want to live the numPass empty, we set the numPass to undefined to skip parameter to lieve the Parameter to default value.
+createBooking('LH123', undefined, 10); //{flightNumber: 'LH123',numberOfPassenegers = 2, price = 10}
