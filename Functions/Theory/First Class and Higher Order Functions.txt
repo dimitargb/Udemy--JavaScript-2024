@@ -1,0 +1,36 @@
+1. JavaScript is a Language that has First Class Functions.
+
+This means that Functions a simply treated sa values. 
+Functions are really just another type of Objects and since Objects are values, Functions are values too.
+So we can store functions in variables or Object properties.
+
+We can also pass functions as arguments to other functions, for example when adding eventHandlesrs or eventListeners to
+DOM Objects.
+
+We can also return a function from another function.
+Functions are Objects and many type of Objects in JavaScript have methods. Those are function methods,
+so methids that we can call on functions.
+
+2. Higher Order Functions.
+
+A Higher Order Function is either a function that recieves another function as argumnet, or a function that returns
+a new Function.
+
+a.) Function that recieves another Function:
+
+const greet() => console.log('Hey Jonas');
+btnClose.addeventListener('click', greet);
+
+Here addeventListener() is a Higher Order Function becuse it recieves another Function greet.
+We usually say thet the Function that is passes in greet() is a CallBack Function, becuse the CallBack Function will
+be called later by the Higher Order Function as soon as the 'click' event happends.
+
+b.) Function that returns another Function:
+ 
+function count() {
+    let counter = 0;
+
+    return function() {
+        counter++;
+    }
+}
