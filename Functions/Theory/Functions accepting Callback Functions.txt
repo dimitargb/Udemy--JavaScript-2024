@@ -1,0 +1,43 @@
+In this lecture we are going to create a functions that accepts other functions as an input.
+
+1. The first usage of a callBack functions is that it makes it easy to split up our code into more reusable and interconected parts.
+
+2. The callBack Functions allow us to create abstactions. Abstraction means that we hide the detail of some code impelementaion
+becuse we dont really care about all that detail. This allows us to think about problems in a higher more abstartct level.
+That's why is called an Abstraction.
+
+/* In this lecture we are going to create a functions that accepts other functions as an input. */
+
+// This function will replace all the spaces in the word.
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+// This function will transform the first word of the input string to upperCase.
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  console.log(others);
+  console.log(first);
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// Here we create a Higher Order Function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('JavaScript is the best!', upperFirstWord); // we are not calling the function here, we are only passing its value!!!
+transformer('JavaScript is the best!', oneWord); // we are not calling the function here, we are only passing its value!!!
+
+//JavaScript uses callbacks all the time
+const high5 = function () {
+  console.log('Hello, callBack Function 😃');
+};
+
+document.body.addEventListener('click', high5);
+['Jonas', 'Marta', 'Adam'].forEach(high5); // 3 times: Hello, callBack Function 😃
+
