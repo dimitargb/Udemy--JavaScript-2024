@@ -1,0 +1,23 @@
+Lets'create a function that returns a new function:
+
+/* Lets'create a function that returns a new function: */
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHello = greet('Hello'); // result of the function greet
+/* So the greeterHello value is actually a function */
+greeterHello('Jonas'); // Hello Jonas
+greeterHello('Steven'); // Hello Steven
+
+/* What metters here is that our first function greet returned a new function, that we stored into the greeterHello variable */
+
+greet('Hey')('Dimitar'); // another way of calling the function: Hey Dimitar
+
+// Importance of function returning other function is important for Functional Programming paradigm !!!
+
+// Challange -> rewrite using arrow function:
+const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+greetArrow('Hi')('Emma'); // Hi Emma;
