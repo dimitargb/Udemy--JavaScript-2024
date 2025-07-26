@@ -1,0 +1,57 @@
+Passing a primitive type to a function is really just the same as passing a copy. So the value is siply copyed.
+'use strict';
+
+const flight = 'LH234';
+const dimitar = {
+  name: 'Dimitar Damianov',
+  passport: 24575556177,
+};
+
+// Now we want to create a check in Function:
+
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'GH234';
+  passenger.name = 'Mr. ' + passenger.name;
+
+  if (passenger.passport === 24575556177) {
+    alert('Checked in');
+  } else {
+    alert('Wrong passport!');
+  }
+};
+
+checkIn(flight, dimitar);
+/* flight is a primitive type is just a string, as we pass this value into the function  flighNum = flight and 
+   this will siply copy the value to flightNum.
+   Therefore flightNum = 'GH234' in the function is a completely different variable and as we chnage it it does not work.
+   But the dimitar Object that we pass into the checkIn function is called passenger, the dinitar Object wass added Mr.
+   When we pass a reffernce type(object) to a function, what is copied is just the reference to the Object int the
+   memory Heap. This will be exactely passenger = dimitar. When we try to copy an Object like this passenger = dimitar,
+   we are really only copying the reference to that Object to the memoery Heap. But they both point to the same Object in the 
+   memory*/
+
+console.log(flight);
+console.log(dimitar);
+
+// Is the same as doing ...
+const flighNum = flight;
+const passenger = dimitar;
+
+/* In summury passing a primitive type to a function is really just the same as creating  a copy outside of a function.
+   So the value is siply copied.
+   On the other hand when we pass an Object to an Function, whatever we change in a copy will also change in the original*/
+
+// Let's create a new function:
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 10000000); // this will create a number between 1 and 10000000;
+};
+
+/* What we have here is 2 function manipulating the same Object, becuse this passport: 24575556177 is not the same after
+   newPassport() function. */
+newPassport(dimitar);
+checkIn(flight, dimitar);
+
+/* In programming thare are 2 terms that are used all the time when dealing with functions -> passing by value and 
+   -> passing by reference */
+
+// JavaScript does not have passing by Reference, only passing by Value, even it looks like is passing by Reference.
