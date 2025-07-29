@@ -1,0 +1,40 @@
+Sometimes in JS we need a function that is only executed once, than never again.
+
+const runOnce = function () {
+  console.log('This will never run again!');
+};
+runOnce();
+
+/* What we do is  writing a function expression wihtout saasigning it to any variable. We do this by wrapping the function
+   into brackets */
+
+//Immdeitaley invoked function expression.
+(function () {
+  console.log('This will never run again!');
+})(); // -> this way we call the function immediatley once
+
+/* This is caled immediately inv0ked function expression */
+
+// console.log(isPrivate); -> is not working because is in the inner scope, we do not have access there.
+
+/* The same works for an arrow function */
+(() => console.log('This will also never run again!'))();
+
+/* We know that functions create scopes. One scope does not have access to variables form an inner scope. 
+   The global scope does not have access to anything that is inside of a scope. Therefor we say that all data defined inside the scope is private. The const isPrivate = 19 is incapsulated inside the function scope. Data privacy are extremely important
+   concepts in programming. It is important to hide variables and the scopes are good tools for doing this. That's why the
+   Immeditaley Invoked Function Expressions where invented*/
+
+/* Varibales declared  with let or const create their own scope inside the block. When we create a block like the one below.
+   Than the outside can still not access isPrivate */
+{
+  const isPrivate = 22; // it creates it's own scope
+  var isNotPrivate = 45; // this is accessable because is declared with var.
+}
+console.log(isNotPrivate);
+
+/* We use the  Immeditaley Invoked Function Expressions, if we want to execute a function just once */
+(function () {
+  console.log('This will never run again!');
+  const isPrivate = 19;
+})(); // -> this way we call the function immediatley once
