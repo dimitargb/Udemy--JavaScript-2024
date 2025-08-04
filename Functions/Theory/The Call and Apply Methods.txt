@@ -1,0 +1,56 @@
+ Review on how the this keyword works !!!
+const lufthansa = {
+  airline: 'Lufthansa',
+  flightCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.flightCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.flightCode}${flightNum}`, name });
+  },
+};
+
+//The this keyword points to the lufthansa Object when in a function !!!
+
+lufthansa.book(239, 'Dimitar'); // Dimitar booked a seat on Lufthansa flight LH239
+lufthansa.book(367, 'Mike Smith'); // Mike Smith booked a seat on Lufthansa flight LH637
+console.log(lufthansa);
+
+/* Let' say thet after some years the Lufthansa group created a new airline */
+/* We will take the Method book() from the lufthansa Object and store it into an external function and we can reuse it */
+
+const book = lufthansa.book; //we store here the function into a new variable !!!
+
+const eurowings = {
+  airline: 'Eurowings',
+  flightCode: 'EW',
+  bookings: [],
+};
+
+/* We need to tell JavaScript explicetly that if we wantr to book the this keyword should point to lufthansa.
+  But if we want to book a ewurowings flight the this keyword should point to eurowings Object.
+  So in order to tell JavaScript what the this keyword should look like, there are 3 function methods - call, apply, bind */
+
+//book(23, 'Mike Duglus'); -> This does not work, so we use instead book.call
+
+/* In the call method the first argument is exactely what we want the this keyword to point too. */
+
+//1. Call Method
+book.call(eurowings, 23, 'Sara Williams');
+book.call(lufthansa, 239, 'Dimitar');
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  flightCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 564, 'Marry Cooper'); // Marry Cooper booked a seat on Swiss Air Lines flight LX564
+
+//2. Apply Method -> The diffrence is that apply() does not recieve list of arguments after this keyword, but an array!!!
+
+const flightData = [546, 'George Kronwel'];
+book.apply(swiss, flightData); // George Kronwel booked a seat on Swiss Air Lines flight LX546
+
+book.call(swiss, ...flightData); // George Kronwel booked a seat on Swiss Air Lines flight LX546
